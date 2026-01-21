@@ -835,7 +835,124 @@
             return requiredFields.every(field => document.getElementById(field).value.trim());
         }
 
-        function fillPDF() {
+        function generatePDF(businessName) {
+            const trade = document.getElementById('trade').value;
+            const ownerName = document.getElementById('ownerName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const zip = document.getElementById('zip').value;
+            const license = document.getElementById('license').value || 'N/A';
+            
+            const tradeNames = {
+                'plumbing': 'Plumbing Service Contract',
+                'electrical': 'Electrical Service Contract',
+                'carpentry': 'Carpentry Service Contract',
+                'hvac': 'HVAC Service Contract',
+                'roofing': 'Roofing Service Contract',
+                'painting': 'Painting Service Contract',
+                'general': 'General Contracting Service Contract'
+            };
+
+            const fullAddress = `${address}, ${city}, ${state} ${zip}`;
+            const tradeName = tradeNames[trade] || 'Service Contract';
+
+            const htmlContent = `
+            <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8;">
+                <div style="text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3c72; padding-bottom: 20px;">
+                    <h1 style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h1>
+                    <p style="margin: 5px 0; color: #666;">${tradeName}</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Provider Information</h3>
+                    <p><strong>Business Name:</strong> ${businessName}</p>
+                    <p><strong>Owner/Manager:</strong> ${ownerName}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Address:</strong> ${fullAddress}</p>
+                    <p><strong>License Number:</strong> ${license}</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Client Information</h3>
+                    <p><strong>Client Name:</strong> _________________________________</p>
+                    <p><strong>Property Address:</strong> _________________________________</p>
+                    <p><strong>Phone:</strong> _________________________________</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Details</h3>
+                    <p><strong>Description of Work:</strong></p>
+                    <p style="border: 1px solid #ddd; padding: 15px; min-height: 80px;">_________________________________________________________________</p>
+                    <p><strong>Start Date:</strong> _________________ &nbsp;&nbsp; <strong>Estimated Completion Date:</strong> _________________</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Payment Terms</h3>
+                    <p><strong>Total Cost:</strong> $_________________ &nbsp;&nbsp; <strong>Deposit Required (50%):</strong> $_________________</p>
+                    <p><strong>Payment Due:</strong> Upon completion of work</p>
+                    <p><strong>Accepted Payment Methods:</strong> Check, Credit Card, Cash</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Terms & Conditions</h3>
+                    <p style="font-size: 12px;">
+                        1. This contract represents the entire agreement between the Service Provider and Client.<br><br>
+                        2. The Service Provider agrees to perform the described work in a professional and timely manner.<br><br>
+                        3. Client agrees to provide access to the work area and utilities as needed.<br><br>
+                        4. Any changes to the scope of work must be approved in writing and may result in additional charges.<br><br>
+                        5. The Service Provider is not responsible for existing damage or structural defects discovered during work.<br><br>
+                        6. By signing below, both parties agree to the terms outlined in this contract.
+                    </p>
+                </div>
+
+                <div style="margin-top: 40px; border-top: 2px solid #ddd; padding-top: 20px;">
+                    <div style="display: inline-block; width: 45%;">
+                        <p><strong>Service Provider Signature</strong></p>
+                        <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                        <p><strong>${businessName}</strong></p>
+                        <p>Date: __________________</p>
+                    </div>
+
+                    <div style="display: inline-block; width: 45%; float: right;">
+                        <p><strong>Client Signature</strong></p>
+                        <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                        <p>Print Name: __________________</p>
+                        <p>Date: __________________</p>
+                    </div>
+                </div>
+
+                <div style="clear: both; margin-top: 40px; text-align: center; color: #999; font-size: 12px;">
+                    <p>Generated by Get Contractor Forms | www.getcontractorforms.com</p>
+                </div>
+            </div>
+            `;
+
+            const opt = {
+                margin: 10,
+                filename: businessName + '_Contract.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+
+            html2pdf().set(opt).html(htmlContent).save();
+        }
+
+        previewBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            if (!validateForm()) {
+                errorMessage.textContent = 'Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
             const trade = document.getElementById('trade').value;
             const businessName = document.getElementById('businessName').value;
             const ownerName = document.getElementById('ownerName').value;
@@ -858,44 +975,103 @@
             };
 
             const fullAddress = `${address}, ${city}, ${state} ${zip}`;
+            const tradeName = tradeNames[trade] || 'Service Contract';
 
-            document.getElementById('contractTrade').innerHTML = tradeNames[trade] || 'Service Contract';
-            document.getElementById('pdfBusinessName').innerHTML = businessName;
-            document.getElementById('pdfBusinessName2').innerHTML = businessName;
-            document.getElementById('pdfOwnerName').innerHTML = ownerName;
-            document.getElementById('pdfPhone').innerHTML = phone;
-            document.getElementById('pdfEmail').innerHTML = email;
-            document.getElementById('pdfAddress').innerHTML = fullAddress;
-            document.getElementById('pdfLicense').innerHTML = license;
-        }
+            const previewHTML = `
+            <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8; max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3c72; padding-bottom: 20px;">
+                    <h1 style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h1>
+                    <p style="margin: 5px 0; color: #666;">${tradeName}</p>
+                </div>
 
-        previewBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            errorMessage.style.display = 'none';
-            successMessage.style.display = 'none';
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Provider Information</h3>
+                    <p><strong>Business Name:</strong> ${businessName}</p>
+                    <p><strong>Owner/Manager:</strong> ${ownerName}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Address:</strong> ${fullAddress}</p>
+                    <p><strong>License Number:</strong> ${license}</p>
+                </div>
 
-            if (!validateForm()) {
-                errorMessage.textContent = 'Please fill in all required fields.';
-                errorMessage.style.display = 'block';
-                return;
-            }
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Client Information</h3>
+                    <p><strong>Client Name:</strong> _________________________________</p>
+                    <p><strong>Property Address:</strong> _________________________________</p>
+                    <p><strong>Phone:</strong> _________________________________</p>
+                </div>
 
-            fillPDF();
-            
-            setTimeout(function() {
-                const contractElement = document.getElementById('contractTemplate');
-                const businessName = document.getElementById('businessName').value;
-                const opt = {
-                    margin: 10,
-                    filename: businessName + '_Contract.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-                };
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Details</h3>
+                    <p><strong>Description of Work:</strong></p>
+                    <p style="border: 1px solid #ddd; padding: 15px; min-height: 80px;">_________________________________________________________________</p>
+                    <p><strong>Start Date:</strong> _________________ &nbsp;&nbsp; <strong>Estimated Completion Date:</strong> _________________</p>
+                </div>
 
-                html2pdf().set(opt).from(contractElement).save();
-                successMessage.style.display = 'block';
-            }, 300);
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Payment Terms</h3>
+                    <p><strong>Total Cost:</strong> $_________________ &nbsp;&nbsp; <strong>Deposit Required (50%):</strong> $_________________</p>
+                    <p><strong>Payment Due:</strong> Upon completion of work</p>
+                    <p><strong>Accepted Payment Methods:</strong> Check, Credit Card, Cash</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Terms & Conditions</h3>
+                    <p style="font-size: 12px;">
+                        1. This contract represents the entire agreement between the Service Provider and Client.<br><br>
+                        2. The Service Provider agrees to perform the described work in a professional and timely manner.<br><br>
+                        3. Client agrees to provide access to the work area and utilities as needed.<br><br>
+                        4. Any changes to the scope of work must be approved in writing and may result in additional charges.<br><br>
+                        5. The Service Provider is not responsible for existing damage or structural defects discovered during work.<br><br>
+                        6. By signing below, both parties agree to the terms outlined in this contract.
+                    </p>
+                </div>
+
+                <div style="margin-top: 40px; border-top: 2px solid #ddd; padding-top: 20px;">
+                    <div style="display: inline-block; width: 45%;">
+                        <p><strong>Service Provider Signature</strong></p>
+                        <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                        <p><strong>${businessName}</strong></p>
+                        <p>Date: __________________</p>
+                    </div>
+
+                    <div style="display: inline-block; width: 45%; float: right;">
+                        <p><strong>Client Signature</strong></p>
+                        <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                        <p>Print Name: __________________</p>
+                        <p>Date: __________________</p>
+                    </div>
+                </div>
+
+                <div style="clear: both; margin-top: 40px; text-align: center; color: #999; font-size: 12px;">
+                    <p>Generated by Get Contractor Forms | www.getcontractorforms.com</p>
+                </div>
+            </div>
+            `;
+
+            // Open preview in new window
+            const previewWindow = window.open('', 'FormPreview', 'width=1000,height=800');
+            previewWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Form Preview - ${businessName}</title>
+                    <style>
+                        body { margin: 0; padding: 20px; background: #f5f5f5; }
+                        .preview-container { background: white; padding: 20px; border-radius: 8px; }
+                    </style>
+                </head>
+                <body>
+                    <div class="preview-container">
+                        ${previewHTML}
+                    </div>
+                </body>
+                </html>
+            `);
+            previewWindow.document.close();
+
+            successMessage.textContent = '✓ Preview opened! To download and use this form, please click "Pay with PayPal - $19.99"';
+            successMessage.style.display = 'block';
         });
 
         paypalBtn.addEventListener('click', function(e) {
@@ -909,23 +1085,11 @@
                 return;
             }
 
-            fillPDF();
+            const businessName = document.getElementById('businessName').value;
             
             alert('Thank you! You will be redirected to PayPal to complete your payment of $19.99.\n\nAfter successful payment, you will immediately receive your customized contract form.\n\nTo integrate PayPal payments, connect your PayPal Business account to this website.');
 
-            setTimeout(function() {
-                const contractElement = document.getElementById('contractTemplate');
-                const businessName = document.getElementById('businessName').value;
-                const opt = {
-                    margin: 10,
-                    filename: businessName + '_Contract.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-                };
-
-                html2pdf().set(opt).from(contractElement).save();
-            }, 300);
+            generatePDF(businessName);
         });
 
         // FAQ Toggle
