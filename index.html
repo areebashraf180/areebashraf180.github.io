@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get custom contractor forms for plumbers, electricians, carpenters, HVAC, roofers & painters. Professional, legally-sound service contracts. One-time $19.99 purchase. Instant download & unlimited use.">
+    <meta name="keywords" content="contractor forms, service contract form, plumber forms, electrician forms, carpenter forms, HVAC forms, roofing forms, painting forms, contract template, professional forms, USA contractor forms">
+    <meta name="author" content="Get Contractor Forms">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Get Contractor Forms - Professional Service Contracts">
+    <meta property="og:description" content="Customized contractor forms for all trades. One-time purchase, instant download.">
+    <meta property="og:type" content="website">
+    <title>Get Contractor Forms - Professional Service Contracts for All Trades</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Get Contractor Forms",
+      "url": "https://www.getcontractorforms.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "USA",
+        "addressCountry": "US"
+      },
+      "description": "Professional contractor forms and service contracts for plumbers, electricians, carpenters, HVAC, roofers, and painters",
+      "priceRange": "$$"
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-section h2 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 5px rgba(42, 82, 152, 0.3);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-row-full {
+            grid-column: 1 / -1;
+        }
+
+        .price-section {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #ff6b35;
+        }
+
+        .price-section h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 36px;
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .one-time {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-download {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-download:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-paypal {
+            background: #0070ba;
+            color: white;
+        }
+
+        .btn-paypal:hover {
+            background: #005399;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .success-message, .error-message {
+            display: none;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .required {
+            color: #ff6b35;
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 40px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .why-card h3 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .why-card p {
+            color: #666;
+        }
+
+        .trades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .trade-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .trade-card h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            background: white;
+            padding: 60px 20px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .testimonial-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #1e3c72;
+            font-weight: bold;
+        }
+
+        .faq-section {
+            background: white;
+            padding: 60px 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 40px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f5f5f5;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #1e3c72;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #efefef;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background: white;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .guarantee-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+
+        .guarantee-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-section p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 14px;
+            }
+
+            .faq-question {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Get Contractor Forms</div>
+            <div>
+                <a href="#form">Get Form</a>
+                <a href="#why">Why Us</a>
+                <a href="#trades">Trades</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Contractor Forms - One-Time Purchase</h1>
+            <p>Custom service contracts for plumbers, electricians, carpenters, HVAC, roofers, and painters</p>
+            <p style="font-size: 16px; margin-top: 20px;">✓ Legally Sound • ✓ Customized to Your Trade • ✓ Instant Download • ✓ Unlimited Use</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: white;" id="why">
+        <div class="container">
+            <h2>Why Choose Get Contractor Forms?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>✓ Professional Quality</h3>
+                    <p>Look more established and credible with professionally designed contracts that impress your clients.</p>
+                </div>
+                <div class="why-card">
+                    <h3>✓ Legally Sound</h3>
+                    <p>Protect your business with proper terms, conditions, and signatures from both parties.</p>
+                </div>
+                <div class="why-card">
+                    <h3>✓ Trade-Specific</h3>
+                    <p>Forms customized for your specific trade with relevant terms and conditions.</p>
+                </div>
+                <div class="why-card">
+                    <h3>✓ Instant Download</h3>
+                    <p>Get your PDF immediately after payment. No waiting, no delays.</p>
+                </div>
+                <div class="why-card">
+                    <h3>✓ Unlimited Use</h3>
+                    <p>Use your form unlimited times with unlimited clients. One payment, lifetime value.</p>
+                </div>
+                <div class="why-card">
+                    <h3>✓ Easy to Edit</h3>
+                    <p>Download as PDF and easily edit with any PDF editor or print and fill manually.</p>
+                </div>
+            </div>
+            <div class="guarantee-section">
+                <h3>30-Day Money-Back Guarantee</h3>
+                <p>Not satisfied? Get a full refund within 30 days. No questions asked.</p>
+                <p>We're confident you'll love our forms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f9f9f9;" id="trades">
+        <div class="container">
+            <h2>Contractor Forms Available For:</h2>
+            <div class="trades-grid">
+                <div class="trade-card">
+                    <h3>🔧 Plumbing</h3>
+                    <p>Professional plumbing service contracts and agreements.</p>
+                </div>
+                <div class="trade-card">
+                    <h3>⚡ Electrical</h3>
+                    <p>Electrical work contracts with safety and compliance terms.</p>
+                </div>
+                <div class="trade-card">
+                    <h3>🪚 Carpentry</h3>
+                    <p>Custom carpentry and woodwork service agreements.</p>
+                </div>
+                <div class="trade-card">
+                    <h3>❄️ HVAC</h3>
+                    <p>HVAC installation and maintenance service contracts.</p>
+                </div>
+                <div class="trade-card">
+                    <h3>🏠 Roofing</h3>
+                    <p>Professional roofing service and warranty agreements.</p>
+                </div>
+                <div class="trade-card">
+                    <h3>🎨 Painting</h3>
+                    <p>Painting service contracts with detailed scope of work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Contractors Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Saved me hours creating contracts from scratch. Professional and affordable!"</p>
+                    <p class="testimonial-author">- Mike Johnson, Plumbing Services</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finally have a proper contract that protects my electrical business. Highly recommended!"</p>
+                    <p class="testimonial-author">- Sarah Chen, Licensed Electrician</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Best $19.99 I spent. Used it 50+ times already. Great value!"</p>
+                    <p class="testimonial-author">- Robert Davis, Carpentry Contractor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-content container" id="form">
+        <form id="contractForm">
+            <div class="form-section">
+                <h2>Create Your Custom Contract Form</h2>
+
+                <div class="form-group">
+                    <label for="trade">Select Your Trade <span class="required">*</span></label>
+                    <select id="trade" name="trade" required>
+                        <option value="">Choose your trade...</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="hvac">HVAC</option>
+                        <option value="roofing">Roofing</option>
+                        <option value="painting">Painting</option>
+                        <option value="general">General Contracting</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="businessName">Business Name <span class="required">*</span></label>
+                    <input type="text" id="businessName" name="businessName" required placeholder="e.g., John's Plumbing Services">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ownerName">Owner/Manager Name <span class="required">*</span></label>
+                        <input type="text" id="ownerName" name="ownerName" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890">
+                    </div>
+                    <div class="form-group">
+                        <label for="license">License Number</label>
+                        <input type="text" id="license" name="license" placeholder="Optional">
+                    </div>
+                </div>
+
+                <div class="form-group form-row-full">
+                    <label for="address">Business Address <span class="required">*</span></label>
+                    <input type="text" id="address" name="address" required placeholder="Street address">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="zip">ZIP Code <span class="required">*</span></label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website (Optional)</label>
+                        <input type="text" id="website" name="website" placeholder="www.example.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <h3>Professional Service Contract Form</h3>
+                <div class="price">$19.99</div>
+                <div class="one-time">✓ ONE-TIME PURCHASE - Use Unlimited Times</div>
+                <p>Customized contract form tailored to your business • Instant PDF download • 30-day guarantee</p>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-download" id="previewBtn">Preview Form (Free)</button>
+                <button type="button" class="btn btn-paypal" id="paypalBtn">Pay with PayPal - $19.99</button>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✓ Form created successfully! Your contract form is ready to download.
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                Please fill in all required fields.
+            </div>
+        </form>
+    </div>
+
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I use this form multiple times?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You can use your contract form unlimited times with unlimited clients. It's a one-time purchase that you own forever.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this legal in my state?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Our forms are designed to comply with US contractor laws and include standard legal protections. However, for specific legal advice, we recommend consulting with a local attorney familiar with your state's requirements.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I edit the form after download?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! The PDF can be edited using any PDF editor, Microsoft Word, or you can print it and fill it in by hand. It's completely customizable.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I get my PDF after payment?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        After successful PayPal payment, you'll be redirected to a download page where you can immediately download your customized contract form as a PDF. No email delays!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I'm not satisfied?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We offer a 30-day money-back guarantee. If you're not happy with your form for any reason, contact us for a full refund.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is $19.99 a monthly subscription?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No! $19.99 is a one-time payment. You own the form forever with unlimited use. No recurring charges or subscriptions.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What trades do you cover?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We have forms for plumbing, electrical, carpentry, HVAC, roofing, painting, and general contracting. More trades coming soon!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I use this for multiple businesses?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Each purchase covers one business/contractor. If you have multiple businesses, you would need separate purchases for each.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="margin-bottom: 15px;">Get Contractor Forms</h3>
+        <p>&copy; 2024 Get Contractor Forms. Professional contract forms for USA contractors.</p>
+        <p style="margin-top: 15px; font-size: 12px;">Service contracts • Professional forms • Plumbers • Electricians • Carpenters • HVAC • Roofers • Painters</p>
+    </footer>
+
+    <!-- Hidden contract form template for PDF generation -->
+    <div id="contractTemplate" class="hidden">
+        <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8;">
+            <div style="text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3c72; padding-bottom: 20px;">
+                <h1 id="contractTitle" style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h1>
+                <p id="contractTrade" style="margin: 5px 0; color: #666;"></p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Provider Information</h3>
+                <p><strong>Business Name:</strong> <span id="pdfBusinessName"></span></p>
+                <p><strong>Owner/Manager:</strong> <span id="pdfOwnerName"></span></p>
+                <p><strong>Phone:</strong> <span id="pdfPhone"></span></p>
+                <p><strong>Email:</strong> <span id="pdfEmail"></span></p>
+                <p><strong>Address:</strong> <span id="pdfAddress"></span></p>
+                <p><strong>License Number:</strong> <span id="pdfLicense"></span></p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Client Information</h3>
+                <p><strong>Client Name:</strong> _________________________________</p>
+                <p><strong>Property Address:</strong> _________________________________</p>
+                <p><strong>Phone:</strong> _________________________________</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Details</h3>
+                <p><strong>Description of Work:</strong></p>
+                <p style="border: 1px solid #ddd; padding: 15px; min-height: 80px;">_________________________________________________________________</p>
+                <p><strong>Start Date:</strong> _________________ &nbsp;&nbsp; <strong>Estimated Completion Date:</strong> _________________</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Payment Terms</h3>
+                <p><strong>Total Cost:</strong> $_________________ &nbsp;&nbsp; <strong>Deposit Required (50%):</strong> $_________________</p>
+                <p><strong>Payment Due:</strong> Upon completion of work</p>
+                <p><strong>Accepted Payment Methods:</strong> Check, Credit Card, Cash</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Terms & Conditions</h3>
+                <p style="font-size: 12px;">
+                    1. This contract represents the entire agreement between the Service Provider and Client.<br><br>
+                    2. The Service Provider agrees to perform the described work in a professional and timely manner.<br><br>
+                    3. Client agrees to provide access to the work area and utilities as needed.<br><br>
+                    4. Any changes to the scope of work must be approved in writing and may result in additional charges.<br><br>
+                    5. The Service Provider is not responsible for existing damage or structural defects discovered during work.<br><br>
+                    6. By signing below, both parties agree to the terms outlined in this contract.
+                </p>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 2px solid #ddd; padding-top: 20px;">
+                <div style="display: inline-block; width: 45%;">
+                    <p><strong>Service Provider Signature</strong></p>
+                    <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                    <p><strong id="pdfBusinessName2"></strong></p>
+                    <p>Date: __________________</p>
+                </div>
+
+                <div style="display: inline-block; width: 45%; float: right;">
+                    <p><strong>Client Signature</strong></p>
+                    <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                    <p>Print Name: __________________</p>
+                    <p>Date: __________________</p>
+                </div>
+            </div>
+
+            <div style="clear: both; margin-top: 40px; text-align: center; color: #999; font-size: 12px;">
+                <p>Generated by Get Contractor Forms | www.getcontractorforms.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contractForm');
+        const previewBtn = document.getElementById('previewBtn');
+        const paypalBtn = document.getElementById('paypalBtn');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        function validateForm() {
+            const requiredFields = ['trade', 'businessName', 'ownerName', 'email', 'phone', 'address', 'city', 'state', 'zip'];
+            return requiredFields.every(field => document.getElementById(field).value.trim());
+        }
+
+        function fillPDF() {
+            const trade = document.getElementById('trade').value;
+            const businessName = document.getElementById('businessName').value;
+            const ownerName = document.getElementById('ownerName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const zip = document.getElementById('zip').value;
+            const license = document.getElementById('license').value || 'N/A';
+            
+            const tradeNames = {
+                'plumbing': 'Plumbing Service Contract',
+                'electrical': 'Electrical Service Contract',
+                'carpentry': 'Carpentry Service Contract',
+                'hvac': 'HVAC Service Contract',
+                'roofing': 'Roofing Service Contract',
+                'painting': 'Painting Service Contract',
+                'general': 'General Contracting Service Contract'
+            };
+
+            const fullAddress = `${address}, ${city}, ${state} ${zip}`;
+
+            document.getElementById('contractTrade').innerHTML = tradeNames[trade] || 'Service Contract';
+            document.getElementById('pdfBusinessName').innerHTML = businessName;
+            document.getElementById('pdfBusinessName2').innerHTML = businessName;
+            document.getElementById('pdfOwnerName').innerHTML = ownerName;
+            document.getElementById('pdfPhone').innerHTML = phone;
+            document.getElementById('pdfEmail').innerHTML = email;
+            document.getElementById('pdfAddress').innerHTML = fullAddress;
+            document.getElementById('pdfLicense').innerHTML = license;
+        }
+
+        previewBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            if (!validateForm()) {
+                errorMessage.textContent = 'Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            fillPDF();
+            
+            setTimeout(function() {
+                const contractElement = document.getElementById('contractTemplate');
+                const businessName = document.getElementById('businessName').value;
+                const opt = {
+                    margin: 10,
+                    filename: businessName + '_Contract.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                };
+
+                html2pdf().set(opt).from(contractElement).save();
+                successMessage.style.display = 'block';
+            }, 300);
+        });
+
+        paypalBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            if (!validateForm()) {
+                errorMessage.textContent = 'Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            fillPDF();
+            
+            alert('Thank you! You will be redirected to PayPal to complete your payment of $19.99.\n\nAfter successful payment, you will immediately receive your customized contract form.\n\nTo integrate PayPal payments, connect your PayPal Business account to this website.');
+
+            setTimeout(function() {
+                const contractElement = document.getElementById('contractTemplate');
+                const businessName = document.getElementById('businessName').value;
+                const opt = {
+                    margin: 10,
+                    filename: businessName + '_Contract.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                };
+
+                html2pdf().set(opt).from(contractElement).save();
+            }, 300);
+        });
+
+        // FAQ Toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('active');
+                this.querySelector('span:last-child').textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
