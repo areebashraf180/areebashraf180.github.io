@@ -456,10 +456,12 @@
 // SAMPLE PDF DOWNLOAD
 function downloadSamplePDF() {
     const element = document.createElement('div');
+    element.style.position = 'fixed';
+    element.style.top = '-9999px';
     element.innerHTML = `
-        <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8;">
+        <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8; width: 800px;">
             <div style="text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3c72; padding-bottom: 20px;">
-                <h1 style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h1>
+                <h2 style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h2>
                 <p style="margin: 5px 0; color: #666;">Electrical Service Contract (Sample)</p>
             </div>
             <div style="margin-bottom: 30px;">
@@ -480,7 +482,7 @@ function downloadSamplePDF() {
             <div style="margin-bottom: 30px;">
                 <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Details</h3>
                 <p><strong>Description of Work:</strong></p>
-                <p style="border: 1px solid #ddd; padding: 15px; min-height: 80px;">________________________________________________</p>
+                <p style="border: 1px solid #ddd; padding: 15px; min-height: 60px; background: #fafafa;">_________________________________________________________________</p>
                 <p><strong>Start Date:</strong> _________________ <strong>Completion Date:</strong> _________________</p>
             </div>
             <div style="margin-bottom: 30px;">
@@ -490,36 +492,45 @@ function downloadSamplePDF() {
             </div>
             <div style="margin-bottom: 30px;">
                 <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Terms & Conditions</h3>
-                <p style="font-size: 11px;">
-                    1. This contract is the entire agreement between Service Provider and Client.<br><br>
-                    2. Service Provider agrees to perform work professionally and timely.<br><br>
-                    3. Client agrees to provide access to work area.<br><br>
-                    4. Changes to scope require written approval.<br><br>
-                    5. Service Provider not responsible for existing damage.<br><br>
+                <p style="font-size: 11px; line-height: 1.6;">
+                    1. This contract is the entire agreement between Service Provider and Client.<br>
+                    2. Service Provider agrees to perform work professionally and timely.<br>
+                    3. Client agrees to provide access to work area.<br>
+                    4. Changes to scope require written approval.<br>
+                    5. Service Provider not responsible for existing damage.<br>
                     6. Both parties agree to the terms.
                 </p>
             </div>
             <div style="margin-top: 40px; border-top: 2px solid #ddd; padding-top: 20px;">
-                <p style="margin-bottom: 30px;"><strong>Service Provider Signature:</strong></p>
-                <p style="border-bottom: 2px solid #000; margin-bottom: 5px;">_________________________</p>
+                <p><strong>Service Provider Signature:</strong></p>
+                <p style="border-bottom: 2px solid #000; margin: 30px 0 5px 0; width: 200px;"></p>
                 <p><strong>John's Electrical Services</strong></p>
                 <p>Date: __________________</p>
             </div>
-            <div style="margin-top: 30px; text-align: center; color: #999; font-size: 11px;">
+            <div style="margin-top: 30px; text-align: center; color: #999; font-size: 10px;">
                 <p>Get Contractor Forms | www.getcontractorforms.com</p>
             </div>
         </div>
     `;
     
-    const opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'Sample_Contract_Form.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-    };
+    document.body.appendChild(element);
     
-    html2pdf().set(opt).from(element).save();
+    setTimeout(function() {
+        const opt = {
+            margin: [10, 10, 10, 10],
+            filename: 'Sample_Contract_Form.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+        };
+        
+        html2pdf().set(opt).from(element).save().then(() => {
+            document.body.removeChild(element);
+        }).catch(err => {
+            console.error('Error:', err);
+            document.body.removeChild(element);
+        });
+    }, 100);
 }
 
     </script>
