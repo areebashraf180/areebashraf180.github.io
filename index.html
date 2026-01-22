@@ -483,11 +483,97 @@
         }
 
         footer {
-            background: #1e3c72;
+            background: linear-gradient(135deg, #1e3c72 0%, #0f1f3d 100%);
             color: white;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 50px 20px 30px;
             margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b35;
+            padding-left: 5px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-cta {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .footer-cta-btn {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta-btn:hover {
+            background: #e55a25;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .hidden {
@@ -616,7 +702,7 @@
 
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <h2>What Contractors Are Saying</h2>
             <p style="text-align: center; color: #666; margin-bottom: 40px;">Trusted by 2,500+ contractors across the USA</p>
@@ -923,9 +1009,64 @@
     </section>
 
     <footer>
-        <h3 style="margin-bottom: 15px;">Get Contractor Forms</h3>
-        <p>&copy; 2024 Get Contractor Forms. Professional contract forms for USA contractors.</p>
-        <p style="margin-top: 15px; font-size: 12px;">Service contracts • Professional forms • Plumbers • Electricians • Carpenters • HVAC • Roofers • Painters</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Get Contractor Forms</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.7;">Professional service contract forms trusted by 2,500+ contractors across all 50 states. One-time purchase, unlimited use, lifetime value.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="background: #28a745; padding: 5px 10px; border-radius: 3px; font-size: 12px; margin-right: 8px;">✓ BBB Accredited</span>
+                        <span style="background: #ff6b35; padding: 5px 10px; border-radius: 3px; font-size: 12px;">✓ Secure Checkout</span>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Forms by Trade</h4>
+                    <ul class="footer-links">
+                        <li><a href="#form">Plumbing Contracts</a></li>
+                        <li><a href="#form">Electrical Contracts</a></li>
+                        <li><a href="#form">Carpentry Contracts</a></li>
+                        <li><a href="#form">HVAC Contracts</a></li>
+                        <li><a href="#form">Roofing Contracts</a></li>
+                        <li><a href="#form">Painting Contracts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#form">Get Your Form</a></li>
+                        <li><a href="#why">Why Choose Us</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="mailto:support@getcontractorforms.com">Contact Support</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 14px;">📧 support@getcontractorforms.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-cta">
+                <p style="font-size: 18px; margin-bottom: 10px;">🚀 Ready to look more professional and protect your business?</p>
+                <a href="#form" class="footer-cta-btn">Get Your Contract Form - $19.99</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Get Contractor Forms. All rights reserved.</p>
+                <p style="margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.6);">
+                    Professional contractor forms and service contracts for plumbers, electricians, carpenters, HVAC technicians, roofers, painters, and general contractors across the United States.
+                </p>
+                <div style="margin-top: 15px; font-size: 12px;">
+                    <a href="#" style="color: rgba(255,255,255,0.6); margin: 0 10px;">Privacy Policy</a> |
+                    <a href="#" style="color: rgba(255,255,255,0.6); margin: 0 10px;">Terms of Service</a> |
+                    <a href="#" style="color: rgba(255,255,255,0.6); margin: 0 10px;">Refund Policy</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Hidden contract form template for PDF generation -->
