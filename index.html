@@ -206,13 +206,13 @@
             transition: all 0.3s;
         }
 
-        .btn-download {
-            background: #28a745;
+        .btn-preview {
+            background: #6c757d;
             color: white;
         }
 
-        .btn-download:hover {
-            background: #218838;
+        .btn-preview:hover {
+            background: #5a6268;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
@@ -453,92 +453,91 @@
 </head>
 <body>
     <script>
-// SAMPLE PDF DOWNLOAD - Using same method as generatePDF
-function downloadSamplePDF() {
-    const tempDiv = document.createElement('div');
-    tempDiv.style.display = 'none';
-    tempDiv.innerHTML = `
-        <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8;">
-            <div style="text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3c72; padding-bottom: 20px;">
-                <h1 style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h1>
-                <p style="margin: 5px 0; color: #666;">Electrical Service Contract (Sample)</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Provider Information</h3>
-                <p><strong>Business Name:</strong> John's Electrical Services</p>
-                <p><strong>Owner/Manager:</strong> John Smith</p>
-                <p><strong>Phone:</strong> (555) 123-4567</p>
-                <p><strong>Email:</strong> john@electricalservices.com</p>
-                <p><strong>Address:</strong> 123 Main Street, New York, NY 10001</p>
-                <p><strong>License Number:</strong> EL-2024-12345</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Client Information</h3>
-                <p><strong>Client Name:</strong> _________________________________</p>
-                <p><strong>Property Address:</strong> _________________________________</p>
-                <p><strong>Phone:</strong> _________________________________</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Details</h3>
-                <p><strong>Description of Work:</strong></p>
-                <p style="border: 1px solid #ddd; padding: 15px; min-height: 80px;">_________________________________________________________________</p>
-                <p><strong>Start Date:</strong> _________________ &nbsp;&nbsp; <strong>Estimated Completion Date:</strong> _________________</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Payment Terms</h3>
-                <p><strong>Total Cost:</strong> $_________________ &nbsp;&nbsp; <strong>Deposit Required (50%):</strong> $_________________</p>
-                <p><strong>Payment Due:</strong> Upon completion of work</p>
-                <p><strong>Accepted Payment Methods:</strong> Check, Credit Card, Cash</p>
-            </div>
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Terms & Conditions</h3>
-                <p style="font-size: 12px;">
-                    1. This contract represents the entire agreement between the Service Provider and Client.<br><br>
-                    2. The Service Provider agrees to perform the described work in a professional and timely manner.<br><br>
-                    3. Client agrees to provide access to the work area and utilities as needed.<br><br>
-                    4. Any changes to the scope of work must be approved in writing and may result in additional charges.<br><br>
-                    5. The Service Provider is not responsible for existing damage or structural defects discovered during work.<br><br>
-                    6. By signing below, both parties agree to the terms outlined in this contract.
-                </p>
-            </div>
-            <div style="margin-top: 40px; border-top: 2px solid #ddd; padding-top: 20px;">
-                <div style="display: inline-block; width: 45%;">
-                    <p><strong>Service Provider Signature</strong></p>
-                    <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
-                    <p><strong>John's Electrical Services</strong></p>
-                    <p>Date: __________________</p>
+        // SAMPLE PDF DOWNLOAD - Using same method as generatePDF
+        function downloadSamplePDF() {
+            const tempDiv = document.createElement('div');
+            tempDiv.style.display = 'none';
+            tempDiv.innerHTML = `
+                <div style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.8;">
+                    <div style="text-align: center; margin-bottom: 40px; border-bottom: 3px solid #1e3c72; padding-bottom: 20px;">
+                        <h1 style="margin: 0; color: #1e3c72;">SERVICE CONTRACT</h1>
+                        <p style="margin: 5px 0; color: #666;">Electrical Service Contract (Sample)</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Provider Information</h3>
+                        <p><strong>Business Name:</strong> John's Electrical Services</p>
+                        <p><strong>Owner/Manager:</strong> John Smith</p>
+                        <p><strong>Phone:</strong> (555) 123-4567</p>
+                        <p><strong>Email:</strong> john@electricalservices.com</p>
+                        <p><strong>Address:</strong> 123 Main Street, New York, NY 10001</p>
+                        <p><strong>License Number:</strong> EL-2024-12345</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Client Information</h3>
+                        <p><strong>Client Name:</strong> _________________________________</p>
+                        <p><strong>Property Address:</strong> _________________________________</p>
+                        <p><strong>Phone:</strong> _________________________________</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Service Details</h3>
+                        <p><strong>Description of Work:</strong></p>
+                        <p style="border: 1px solid #ddd; padding: 15px; min-height: 80px;">_________________________________________________________________</p>
+                        <p><strong>Start Date:</strong> _________________ &nbsp;&nbsp; <strong>Estimated Completion Date:</strong> _________________</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Payment Terms</h3>
+                        <p><strong>Total Cost:</strong> $_________________ &nbsp;&nbsp; <strong>Deposit Required (50%):</strong> $_________________</p>
+                        <p><strong>Payment Due:</strong> Upon completion of work</p>
+                        <p><strong>Accepted Payment Methods:</strong> Check, Credit Card, Cash</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 8px;">Terms & Conditions</h3>
+                        <p style="font-size: 12px;">
+                            1. This contract represents the entire agreement between the Service Provider and Client.<br><br>
+                            2. The Service Provider agrees to perform the described work in a professional and timely manner.<br><br>
+                            3. Client agrees to provide access to the work area and utilities as needed.<br><br>
+                            4. Any changes to the scope of work must be approved in writing and may result in additional charges.<br><br>
+                            5. The Service Provider is not responsible for existing damage or structural defects discovered during work.<br><br>
+                            6. By signing below, both parties agree to the terms outlined in this contract.
+                        </p>
+                    </div>
+                    <div style="margin-top: 40px; border-top: 2px solid #ddd; padding-top: 20px;">
+                        <div style="display: inline-block; width: 45%;">
+                            <p><strong>Service Provider Signature</strong></p>
+                            <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                            <p><strong>John's Electrical Services</strong></p>
+                            <p>Date: __________________</p>
+                        </div>
+                        <div style="display: inline-block; width: 45%; float: right;">
+                            <p><strong>Client Signature</strong></p>
+                            <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
+                            <p>Print Name: __________________</p>
+                            <p>Date: __________________</p>
+                        </div>
+                    </div>
+                    <div style="clear: both; margin-top: 40px; text-align: center; color: #999; font-size: 12px;">
+                        <p>Generated by Get Contractor Forms | www.getcontractorforms.com</p>
+                    </div>
                 </div>
-                <div style="display: inline-block; width: 45%; float: right;">
-                    <p><strong>Client Signature</strong></p>
-                    <p style="border-top: 1px solid #000; padding-top: 5px; margin-top: 30px;">____________________________</p>
-                    <p>Print Name: __________________</p>
-                    <p>Date: __________________</p>
-                </div>
-            </div>
-            <div style="clear: both; margin-top: 40px; text-align: center; color: #999; font-size: 12px;">
-                <p>Generated by Get Contractor Forms | www.getcontractorforms.com</p>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(tempDiv);
-    
-    const opt = {
-        margin: 10,
-        filename: 'Sample_Contract_Form.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-    };
+            `;
+            
+            document.body.appendChild(tempDiv);
+            
+            const opt = {
+                margin: 10,
+                filename: 'Sample_Contract_Form.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
 
-    html2pdf().set(opt).from(tempDiv.firstChild).save().then(() => {
-        document.body.removeChild(tempDiv);
-    }).catch(err => {
-        console.error('PDF error:', err);
-        document.body.removeChild(tempDiv);
-    });
-}
-
+            html2pdf().set(opt).from(tempDiv.firstChild).save().then(() => {
+                document.body.removeChild(tempDiv);
+            }).catch(err => {
+                console.error('PDF error:', err);
+                document.body.removeChild(tempDiv);
+            });
+        }
     </script>
 
     <header>
@@ -640,7 +639,8 @@ function downloadSamplePDF() {
         </div>
     </section>
 
-    <!-- Sample Form Modal - REMOVED - Now using PDF download instead -->
+    <!-- Testimonials Section - FIXED: Added missing opening tag -->
+    <section class="testimonials">
         <div class="container">
             <h2>What Contractors Are Saying</h2>
             <div class="testimonial-grid">
@@ -742,7 +742,8 @@ function downloadSamplePDF() {
             </div>
 
             <div class="button-group">
-                <button type="button" class="btn btn-paypal" id="paypalBtn">💳 Pay Now - $19.99 (PayPal, Credit Card, Debit Card)</button>
+                <button type="button" class="btn btn-preview" id="previewBtn">👁️ Preview Form</button>
+                <button type="button" class="btn btn-paypal" id="paypalBtn">💳 Pay Now - $19.99</button>
             </div>
 
             <div class="success-message" id="successMessage">
@@ -964,19 +965,17 @@ function downloadSamplePDF() {
     </div>
 
     <script>
+        // Get DOM elements
         const form = document.getElementById('contractForm');
+        const previewBtn = document.getElementById('previewBtn');
         const paypalBtn = document.getElementById('paypalBtn');
         const successMessage = document.getElementById('successMessage');
         const errorMessage = document.getElementById('errorMessage');
 
+        // FIXED: validateForm no longer checks for payment method radio buttons
         function validateForm() {
             const requiredFields = ['trade', 'businessName', 'ownerName', 'email', 'phone', 'address', 'city', 'state', 'zip'];
-            const allFilled = requiredFields.every(field => document.getElementById(field).value.trim());
-            
-            // Check if payment method is selected
-            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-            
-            return allFilled && paymentMethod;
+            return requiredFields.every(field => document.getElementById(field).value.trim());
         }
 
         function generatePDF(businessName) {
@@ -1093,6 +1092,7 @@ function downloadSamplePDF() {
             });
         }
 
+        // FIXED: Added previewBtn element and event listener
         previewBtn.addEventListener('click', function(e) {
             e.preventDefault();
             errorMessage.style.display = 'none';
@@ -1206,7 +1206,7 @@ function downloadSamplePDF() {
             
             previewWindow.document.close();
 
-            successMessage.textContent = '✓ Preview opened in a new window! To download and use this form, please click "Pay with PayPal - $19.99"';
+            successMessage.textContent = '✓ Preview opened in a new window! To download and use this form, please click "Pay Now - $19.99"';
             successMessage.style.display = 'block';
         });
 
@@ -1228,7 +1228,7 @@ function downloadSamplePDF() {
             generatePDF(businessName);
         });
 
-        // FAQ Toggle
+        // FIXED: FAQ Toggle - Only ONE instance (removed duplicate)
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
             question.addEventListener('click', function() {
@@ -1246,16 +1246,6 @@ function downloadSamplePDF() {
             }
         });
 
-        // FAQ Toggle - Only ONE time
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                answer.classList.toggle('active');
-                this.querySelector('span:last-child').textContent = answer.classList.contains('active') ? '−' : '+';
-            });
-        });
-
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1267,3 +1257,5 @@ function downloadSamplePDF() {
             });
         });
     </script>
+</body>
+</html>
