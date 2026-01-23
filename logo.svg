@@ -1,0 +1,53 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5298;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8555;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)"/>
+  
+  <!-- Document Icon -->
+  <g transform="translate(140, 100)">
+    <!-- Paper background -->
+    <rect x="0" y="0" width="180" height="230" rx="10" fill="white"/>
+    
+    <!-- Folded corner -->
+    <path d="M 130 0 L 180 50 L 130 50 Z" fill="#e0e0e0"/>
+    <path d="M 130 0 L 180 50 L 130 50 Z" fill="none" stroke="#ccc" stroke-width="1"/>
+    
+    <!-- Orange header line -->
+    <rect x="25" y="60" width="130" height="8" rx="4" fill="url(#orangeGradient)"/>
+    
+    <!-- Content lines -->
+    <rect x="25" y="85" width="130" height="6" rx="3" fill="#ddd"/>
+    <rect x="25" y="100" width="110" height="6" rx="3" fill="#ddd"/>
+    <rect x="25" y="115" width="120" height="6" rx="3" fill="#ddd"/>
+    
+    <!-- Checkbox items -->
+    <rect x="25" y="140" width="12" height="12" rx="2" fill="none" stroke="#1e3c72" stroke-width="2"/>
+    <rect x="45" y="143" width="80" height="6" rx="3" fill="#ddd"/>
+    
+    <rect x="25" y="160" width="12" height="12" rx="2" fill="url(#orangeGradient)"/>
+    <path d="M 28 166 L 32 170 L 38 162" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="45" y="163" width="90" height="6" rx="3" fill="#ddd"/>
+    
+    <rect x="25" y="180" width="12" height="12" rx="2" fill="url(#orangeGradient)"/>
+    <path d="M 28 186 L 32 190 L 38 182" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="45" y="183" width="70" height="6" rx="3" fill="#ddd"/>
+    
+    <!-- Signature line -->
+    <rect x="25" y="210" width="60" height="2" fill="#1e3c72"/>
+  </g>
+  
+  <!-- Circular badge with checkmark -->
+  <circle cx="380" cy="380" r="60" fill="url(#orangeGradient)"/>
+  <circle cx="380" cy="380" r="50" fill="none" stroke="white" stroke-width="4"/>
+  <path d="M 355 380 L 372 397 L 410 355" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
