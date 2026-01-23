@@ -1,0 +1,97 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5298;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8555;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="1100" cy="530" r="200" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="900" cy="100" r="100" fill="rgba(255,255,255,0.03)"/>
+  
+  <!-- Contract Document Preview -->
+  <g filter="url(#shadow)">
+    <rect x="650" y="80" width="480" height="470" rx="10" fill="white"/>
+    
+    <!-- Document Header -->
+    <rect x="650" y="80" width="480" height="60" rx="10" fill="#1e3c72"/>
+    <rect x="650" y="130" width="480" height="10" fill="#1e3c72"/>
+    <text x="890" y="120" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">SERVICE CONTRACT</text>
+    
+    <!-- Orange line -->
+    <rect x="690" y="155" width="400" height="4" fill="url(#orangeGradient)"/>
+    
+    <!-- Document content lines -->
+    <rect x="690" y="180" width="150" height="12" rx="2" fill="#1e3c72"/>
+    <rect x="690" y="200" width="380" height="8" rx="2" fill="#e0e0e0"/>
+    <rect x="690" y="215" width="350" height="8" rx="2" fill="#e0e0e0"/>
+    <rect x="690" y="230" width="300" height="8" rx="2" fill="#e0e0e0"/>
+    
+    <rect x="690" y="260" width="120" height="12" rx="2" fill="#1e3c72"/>
+    <rect x="690" y="280" width="380" height="8" rx="2" fill="#e0e0e0"/>
+    <rect x="690" y="295" width="360" height="8" rx="2" fill="#e0e0e0"/>
+    
+    <rect x="690" y="325" width="140" height="12" rx="2" fill="#1e3c72"/>
+    <rect x="690" y="345" width="380" height="50" rx="4" fill="#f5f5f5" stroke="#ddd"/>
+    
+    <rect x="690" y="415" width="130" height="12" rx="2" fill="#1e3c72"/>
+    <rect x="690" y="435" width="180" height="25" rx="4" fill="#f0f0f0" stroke="#1e3c72" stroke-width="2"/>
+    <text x="780" y="453" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e3c72">$ _______</text>
+    
+    <!-- Signature lines -->
+    <rect x="690" y="485" width="170" height="1" fill="#333"/>
+    <text x="690" y="500" font-family="Arial, sans-serif" font-size="10" fill="#666">Service Provider</text>
+    <rect x="900" y="485" width="170" height="1" fill="#333"/>
+    <text x="900" y="500" font-family="Arial, sans-serif" font-size="10" fill="#666">Client</text>
+    
+    <!-- Checkmarks -->
+    <circle cx="1090" y="200" r="12" fill="#28a745"/>
+    <text x="1090" y="205" font-family="Arial" font-size="16" fill="white" text-anchor="middle">✓</text>
+    <circle cx="1090" y="280" r="12" fill="#28a745"/>
+    <text x="1090" y="285" font-family="Arial" font-size="16" fill="white" text-anchor="middle">✓</text>
+  </g>
+  
+  <!-- Left side content -->
+  <text x="80" y="180" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white">Professional</text>
+  <text x="80" y="230" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white">Contractor</text>
+  <text x="80" y="280" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="url(#orangeGradient)">Forms</text>
+  
+  <!-- Tagline -->
+  <text x="80" y="330" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.9)">Service Contracts for All Trades</text>
+  
+  <!-- Features -->
+  <g font-family="Arial, sans-serif" font-size="16" fill="white">
+    <text x="80" y="390">✓ Plumbing</text>
+    <text x="80" y="420">✓ Electrical</text>
+    <text x="80" y="450">✓ HVAC</text>
+    <text x="230" y="390">✓ Roofing</text>
+    <text x="230" y="420">✓ Painting</text>
+    <text x="230" y="450">✓ Carpentry</text>
+  </g>
+  
+  <!-- Price badge -->
+  <g>
+    <rect x="80" y="490" width="200" height="60" rx="8" fill="url(#orangeGradient)"/>
+    <text x="180" y="525" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">$19.99</text>
+    <text x="180" y="542" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">ONE-TIME PURCHASE</text>
+  </g>
+  
+  <!-- Trust badges -->
+  <text x="320" y="520" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.8)">✓ Instant Download</text>
+  <text x="320" y="542" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.8)">✓ Unlimited Use</text>
+  
+  <!-- Website URL -->
+  <text x="600" y="600" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle">www.getcontractorforms.com</text>
+</svg>
