@@ -1576,6 +1576,7 @@
                 <a href="#trades">Trades</a>
                 <a href="#testimonials">Reviews</a>
                 <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
@@ -2087,6 +2088,59 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section class="section" style="background: white;" id="contact">
+        <div class="container">
+            <h2 style="text-align: center; color: #1e3c72; margin-bottom: 10px;">Have Questions? Contact Us</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">We typically respond within 24 hours</p>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form action="https://formspree.io/f/meeanqdl" method="POST" id="contactForm">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1e3c72;">Your Name <span style="color: #ff6b35;">*</span></label>
+                        <input type="text" name="name" required placeholder="John Smith" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1e3c72;">Your Email <span style="color: #ff6b35;">*</span></label>
+                        <input type="email" name="email" required placeholder="john@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1e3c72;">Subject</label>
+                        <select name="subject" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                            <option value="General Question">General Question</option>
+                            <option value="Pre-Purchase Question">Pre-Purchase Question</option>
+                            <option value="Payment Issue">Payment Issue</option>
+                            <option value="Refund Request">Refund Request</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1e3c72;">Your Message <span style="color: #ff6b35;">*</span></label>
+                        <textarea name="message" required rows="5" placeholder="How can we help you?" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
+                    </div>
+                    
+                    <!-- Honeypot for spam prevention -->
+                    <input type="text" name="_gotcha" style="display: none;">
+                    
+                    <!-- Custom subject line for email -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Get Contractor Forms">
+                    
+                    <button type="submit" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+                        📧 Send Message
+                    </button>
+                </form>
+                
+                <p style="text-align: center; margin-top: 20px; color: #888; font-size: 14px;">
+                    Or email us directly at: <a href="mailto:areebashrafahangermaa_cse18@its.edu.in" style="color: #1e3c72;">areebashrafahangermaa_cse18@its.edu.in</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <footer role="contentinfo">
@@ -2120,7 +2174,7 @@
                         <li><a href="#why">Why Choose Us</a></li>
                         <li><a href="#faq">FAQs</a></li>
                         <li><a href="#testimonials">Reviews</a></li>
-                        <li><a href="mailto:areebashrafahangermaa_cse18@its.edu.in">Contact Support</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
                         <li><a href="#" onclick="openModal('refundModal')">Refund Policy</a></li>
                     </ul>
                 </div>
