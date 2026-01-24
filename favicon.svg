@@ -1,0 +1,24 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72"/>
+      <stop offset="100%" style="stop-color:#2a5298"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  
+  <!-- Document icon -->
+  <rect x="8" y="5" width="16" height="20" rx="2" fill="white"/>
+  
+  <!-- Lines on document -->
+  <rect x="11" y="9" width="10" height="2" rx="1" fill="#1e3c72"/>
+  <rect x="11" y="13" width="8" height="1.5" rx="0.75" fill="#ddd"/>
+  <rect x="11" y="16" width="10" height="1.5" rx="0.75" fill="#ddd"/>
+  <rect x="11" y="19" width="6" height="1.5" rx="0.75" fill="#ddd"/>
+  
+  <!-- Checkmark badge -->
+  <circle cx="24" cy="24" r="7" fill="#ff6b35"/>
+  <path d="M21 24 L23 26 L27 21" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
