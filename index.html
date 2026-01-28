@@ -2799,28 +2799,10 @@
             }
 
             const businessName = document.getElementById('businessName').value;
-            const ownerName = document.getElementById('ownerName').value;
-            const email = document.getElementById('email').value;
-            const trade = document.getElementById('trade').value;
             
-            // Save order details to localStorage (so we can show after payment)
-            localStorage.setItem('orderBusinessName', businessName);
-            localStorage.setItem('orderOwnerName', ownerName);
-            localStorage.setItem('orderEmail', email);
-            localStorage.setItem('orderTrade', trade);
-            localStorage.setItem('orderPending', 'true');
-            
-            // Generate PDF first
+            alert('Thank you! You will be redirected to PayPal to complete your payment of $19.99.\n\nAfter successful payment, you will immediately receive your customized contract form.\n\nTo integrate PayPal payments, connect your PayPal Business account to this website.');
+
             generatePDF(businessName);
-            
-            // Show success message
-            successMessage.innerHTML = '✅ <strong>Your contract form has been downloaded!</strong><br><br>Now complete your payment of <strong>$19.99</strong> via PayPal.<br><br>Redirecting to PayPal in 3 seconds...';
-            successMessage.style.display = 'block';
-            
-            // Redirect to PayPal after 3 seconds
-            setTimeout(function() {
-                window.open('https://paypal.me/areebashraf/19.99', '_blank');
-            }, 3000);
         });
 
         // FIXED: FAQ Toggle - Only ONE instance (removed duplicate)
