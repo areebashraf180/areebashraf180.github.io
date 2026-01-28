@@ -1857,147 +1857,209 @@
     </section>
 
     <div class="main-content container" id="form">
-        <form id="contractForm">
-            <div class="form-section">
-                <h2>Create Your Service Contract</h2>
-                <p style="text-align: center; color: #666; margin-bottom: 30px;">Fill in both parties' details to generate your professional contract</p>
-
-                <!-- Section 1: Contractor Details -->
-                <div style="background: #f0f4f8; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #1e3c72;">
-                    <h3 style="color: #1e3c72; margin-top: 0; margin-bottom: 20px;">📋 Section 1: Contractor Details</h3>
-                    
-                    <div class="form-group">
-                        <label for="trade">Trade Type <span class="required">*</span></label>
-                        <select id="trade" name="trade" required>
-                            <option value="">Select your trade...</option>
-                            <option value="plumbing">Plumbing</option>
-                            <option value="electrical">Electrical</option>
-                            <option value="carpentry">Carpentry</option>
-                            <option value="hvac">HVAC</option>
-                            <option value="roofing">Roofing</option>
-                            <option value="painting">Painting</option>
-                            <option value="general">General Contracting</option>
-                        </select>
+        <!-- STEP 1: Registration Form (One-time payment) -->
+        <div id="registrationSection">
+            <form id="registrationForm">
+                <div class="form-section">
+                    <h2>🚀 Get Lifetime Access to Contract Generator</h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 10px;">One-time payment • Unlimited contracts forever</p>
+                    <div style="text-align: center; background: #d4edda; padding: 15px; border-radius: 8px; margin-bottom: 25px;">
+                        <p style="color: #155724; margin: 0; font-size: 16px;">✅ Pay once ($19.99) → Generate <strong>UNLIMITED</strong> contracts with different clients!</p>
                     </div>
 
-                    <div class="form-row">
+                    <!-- Contractor Details -->
+                    <div style="background: #f0f4f8; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #1e3c72;">
+                        <h3 style="color: #1e3c72; margin-top: 0; margin-bottom: 20px;">📋 Your Business Details</h3>
+                        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Enter your details once. They'll be saved for all future contracts.</p>
+                        
                         <div class="form-group">
-                            <label for="businessName">Business Name <span class="required">*</span></label>
-                            <input type="text" id="businessName" name="businessName" required placeholder="Your Company Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="license">License Number</label>
-                            <input type="text" id="license" name="license" placeholder="Optional">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="contractorPhone">Phone <span class="required">*</span></label>
-                            <input type="tel" id="contractorPhone" name="contractorPhone" required placeholder="(123) 456-7890">
-                        </div>
-                        <div class="form-group">
-                            <label for="contractorEmail">Email <span class="required">*</span></label>
-                            <input type="email" id="contractorEmail" name="contractorEmail" required placeholder="you@company.com">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contractorAddress">Business Address <span class="required">*</span></label>
-                        <input type="text" id="contractorAddress" name="contractorAddress" required placeholder="123 Main St, City, State ZIP">
-                    </div>
-                </div>
-
-                <!-- Section 2: Client Details -->
-                <div style="background: #fff8f0; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #ff6b35; margin-top: 0; margin-bottom: 20px;">👤 Section 2: Client Details</h3>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="clientName">Client Name <span class="required">*</span></label>
-                            <input type="text" id="clientName" name="clientName" required placeholder="Client's full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="clientPhone">Client Phone <span class="required">*</span></label>
-                            <input type="tel" id="clientPhone" name="clientPhone" required placeholder="(123) 456-7890">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="clientEmail">Client Email</label>
-                        <input type="email" id="clientEmail" name="clientEmail" placeholder="client@email.com (Optional)">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="jobAddress">Job Site Address <span class="required">*</span></label>
-                        <input type="text" id="jobAddress" name="jobAddress" required placeholder="Where the work will be performed">
-                    </div>
-                </div>
-
-                <!-- Section 3: Job Details -->
-                <div style="background: #f0fff4; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #28a745;">
-                    <h3 style="color: #28a745; margin-top: 0; margin-bottom: 20px;">🔧 Section 3: Job Details</h3>
-                    
-                    <div class="form-group">
-                        <label for="jobDescription">Job Description <span class="required">*</span></label>
-                        <textarea id="jobDescription" name="jobDescription" required rows="4" placeholder="Describe the work to be performed in detail..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="startDate">Start Date <span class="required">*</span></label>
-                            <input type="date" id="startDate" name="startDate" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="completionDate">Estimated Completion Date <span class="required">*</span></label>
-                            <input type="date" id="completionDate" name="completionDate" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="totalAmount">Total Amount ($) <span class="required">*</span></label>
-                            <input type="number" id="totalAmount" name="totalAmount" required placeholder="0.00" min="0" step="0.01">
-                        </div>
-                        <div class="form-group">
-                            <label for="paymentTerms">Payment Terms <span class="required">*</span></label>
-                            <select id="paymentTerms" name="paymentTerms" required>
-                                <option value="">Select payment terms...</option>
-                                <option value="full_upfront">Full Payment Upfront (100%)</option>
-                                <option value="50_50">50% Deposit, 50% on Completion</option>
-                                <option value="30_70">30% Deposit, 70% on Completion</option>
-                                <option value="on_completion">Payment Upon Completion (100%)</option>
-                                <option value="three_parts">1/3 Start, 1/3 Midway, 1/3 Completion</option>
-                                <option value="custom">Custom Payment Plan</option>
+                            <label for="trade">Trade Type <span class="required">*</span></label>
+                            <select id="trade" name="trade" required>
+                                <option value="">Select your trade...</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="carpentry">Carpentry</option>
+                                <option value="hvac">HVAC</option>
+                                <option value="roofing">Roofing</option>
+                                <option value="painting">Painting</option>
+                                <option value="general">General Contracting</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="form-group" id="customPaymentGroup" style="display: none;">
-                        <label for="customPayment">Custom Payment Details</label>
-                        <textarea id="customPayment" name="customPayment" rows="2" placeholder="Describe your custom payment schedule..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessName">Business Name <span class="required">*</span></label>
+                                <input type="text" id="businessName" name="businessName" required placeholder="Your Company Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="license">License Number</label>
+                                <input type="text" id="license" name="license" placeholder="Optional">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contractorPhone">Phone <span class="required">*</span></label>
+                                <input type="tel" id="contractorPhone" name="contractorPhone" required placeholder="(123) 456-7890">
+                            </div>
+                            <div class="form-group">
+                                <label for="contractorEmail">Email <span class="required">*</span></label>
+                                <input type="email" id="contractorEmail" name="contractorEmail" required placeholder="you@company.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contractorAddress">Business Address <span class="required">*</span></label>
+                            <input type="text" id="contractorAddress" name="contractorAddress" required placeholder="123 Main St, City, State ZIP">
+                        </div>
                     </div>
                 </div>
+
+                <div class="price-section">
+                    <h3>Lifetime Access to Contract Generator</h3>
+                    <div class="price">$19.99</div>
+                    <div class="one-time">✓ ONE-TIME PURCHASE - Generate Unlimited Contracts</div>
+                    <p>Your details saved • Create contracts instantly • Different clients each time</p>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-paypal" id="payBtn">💳 Pay $19.99 & Get Access</button>
+                </div>
+
+                <div class="error-message" id="regErrorMessage">
+                    Please fill in all required fields.
+                </div>
+            </form>
+        </div>
+
+        <!-- STEP 2: Contract Generator (After payment - unlimited use) -->
+        <div id="generatorSection" style="display: none;">
+            <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; text-align: center;">
+                <h2 style="margin: 0 0 10px 0;">✅ Welcome, <span id="welcomeBusinessName">Contractor</span>!</h2>
+                <p style="margin: 0; opacity: 0.9;">Your account is active. Generate unlimited contracts below.</p>
             </div>
 
-            <div class="price-section">
-                <h3>Professional Service Contract Form</h3>
-                <div class="price">$19.99</div>
-                <div class="one-time">✓ ONE-TIME PURCHASE - Use Unlimited Times</div>
-                <p>Complete contract with both parties • Instant PDF download • 30-day guarantee</p>
-            </div>
+            <form id="contractForm">
+                <div class="form-section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 style="margin: 0;">📝 Generate New Contract</h2>
+                        <span style="background: #e8f5e9; color: #2e7d32; padding: 8px 15px; border-radius: 20px; font-size: 14px;">✓ Unlimited Use</span>
+                    </div>
 
-            <div class="button-group">
-                <button type="button" class="btn btn-preview" id="previewBtn">👁️ Preview Contract</button>
-                <button type="button" class="btn btn-paypal" id="paypalBtn">💳 Pay Now - $19.99</button>
-            </div>
+                    <!-- Saved Contractor Info (Read-only display) -->
+                    <div style="background: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #1e3c72;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4 style="color: #1e3c72; margin: 0;">📋 Your Business Info</h4>
+                            <button type="button" onclick="editContractorInfo()" style="background: none; border: 1px solid #1e3c72; color: #1e3c72; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px;">✏️ Edit</button>
+                        </div>
+                        <p style="margin: 10px 0 0 0; color: #555;" id="savedContractorInfo">Loading...</p>
+                    </div>
 
-            <div class="success-message" id="successMessage">
-                ✓ Contract created successfully! Your contract is ready to download.
-            </div>
+                    <!-- Client Details -->
+                    <div style="background: #fff8f0; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #ff6b35;">
+                        <h3 style="color: #ff6b35; margin-top: 0; margin-bottom: 20px;">👤 Client Details</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientName">Client Name <span class="required">*</span></label>
+                                <input type="text" id="clientName" name="clientName" required placeholder="Client's full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientPhone">Client Phone <span class="required">*</span></label>
+                                <input type="tel" id="clientPhone" name="clientPhone" required placeholder="(123) 456-7890">
+                            </div>
+                        </div>
 
-            <div class="error-message" id="errorMessage">
-                Please fill in all required fields.
+                        <div class="form-group">
+                            <label for="clientEmail">Client Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" placeholder="client@email.com (Optional)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobAddress">Job Site Address <span class="required">*</span></label>
+                            <input type="text" id="jobAddress" name="jobAddress" required placeholder="Where the work will be performed">
+                        </div>
+                    </div>
+
+                    <!-- Job Details -->
+                    <div style="background: #f0fff4; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #28a745;">
+                        <h3 style="color: #28a745; margin-top: 0; margin-bottom: 20px;">🔧 Job Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="jobDescription">Job Description <span class="required">*</span></label>
+                            <textarea id="jobDescription" name="jobDescription" required rows="4" placeholder="Describe the work to be performed in detail..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Start Date <span class="required">*</span></label>
+                                <input type="date" id="startDate" name="startDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="completionDate">Estimated Completion Date <span class="required">*</span></label>
+                                <input type="date" id="completionDate" name="completionDate" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="totalAmount">Total Amount ($) <span class="required">*</span></label>
+                                <input type="number" id="totalAmount" name="totalAmount" required placeholder="0.00" min="0" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="paymentTerms">Payment Terms <span class="required">*</span></label>
+                                <select id="paymentTerms" name="paymentTerms" required>
+                                    <option value="">Select payment terms...</option>
+                                    <option value="full_upfront">Full Payment Upfront (100%)</option>
+                                    <option value="50_50">50% Deposit, 50% on Completion</option>
+                                    <option value="30_70">30% Deposit, 70% on Completion</option>
+                                    <option value="on_completion">Payment Upon Completion (100%)</option>
+                                    <option value="three_parts">1/3 Start, 1/3 Midway, 1/3 Completion</option>
+                                    <option value="custom">Custom Payment Plan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="customPaymentGroup" style="display: none;">
+                            <label for="customPayment">Custom Payment Details</label>
+                            <textarea id="customPayment" name="customPayment" rows="2" placeholder="Describe your custom payment schedule..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-preview" id="previewBtn">👁️ Preview Contract</button>
+                    <button type="button" class="btn btn-paypal" id="generateBtn" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">📄 Generate & Download Contract</button>
+                </div>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Contract created successfully! Your contract is ready to download.
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    Please fill in all required fields.
+                </div>
+            </form>
+
+            <!-- Contract Counter -->
+            <div style="text-align: center; margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
+                <p style="margin: 0; color: #666;">📊 Contracts Generated: <strong id="contractCount">0</strong></p>
+            </div>
+        </div>
+
+        <!-- Thank You / Success Section -->
+        <div id="thankYouSection" style="display: none; background: #d4edda; border: 2px solid #28a745; padding: 30px; border-radius: 8px; margin-top: 30px;">
+            <h2 style="color: #155724; margin-top: 0; text-align: center;">✅ Contract Downloaded Successfully!</h2>
+            <div style="background: white; padding: 20px; border-radius: 5px; margin-top: 20px; text-align: center;">
+                <p style="font-size: 18px; color: #155724;">📥 <strong>Check your Downloads folder</strong></p>
+                <p style="color: #666; margin: 10px 0;">Your contract has been saved as:</p>
+                <p style="background: #f0f0f0; padding: 10px; border-radius: 4px; font-family: monospace;" id="downloadedFileName">Contract.pdf</p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="createAnotherContract()" style="background: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">➕ Create Another Contract</button>
+            </div>
+        </div>
+    </div>
             </div>
         </form>
 
@@ -2590,45 +2652,149 @@
         // Get DOM elements
         const form = document.getElementById('contractForm');
         const previewBtn = document.getElementById('previewBtn');
-        const paypalBtn = document.getElementById('paypalBtn');
         const successMessage = document.getElementById('successMessage');
         const errorMessage = document.getElementById('errorMessage');
 
-        // FIXED: validateForm no longer checks for payment method radio buttons
-        // Show/hide custom payment field
-        document.getElementById('paymentTerms').addEventListener('change', function() {
-            const customGroup = document.getElementById('customPaymentGroup');
-            if (this.value === 'custom') {
-                customGroup.style.display = 'block';
+        // ============ NEW TWO-STEP SYSTEM ============
+        
+        // Check if user already has access (paid before)
+        function checkAccess() {
+            const contractorData = localStorage.getItem('contractorData');
+            const hasPaid = localStorage.getItem('hasPaid');
+            
+            if (contractorData && hasPaid === 'true') {
+                // User has paid, show generator
+                showGeneratorSection();
             } else {
-                customGroup.style.display = 'none';
+                // Show registration form
+                document.getElementById('registrationSection').style.display = 'block';
+                document.getElementById('generatorSection').style.display = 'none';
+            }
+        }
+        
+        // Show generator section after payment
+        function showGeneratorSection() {
+            const contractorData = JSON.parse(localStorage.getItem('contractorData'));
+            
+            document.getElementById('registrationSection').style.display = 'none';
+            document.getElementById('generatorSection').style.display = 'block';
+            document.getElementById('welcomeBusinessName').textContent = contractorData.businessName;
+            
+            // Display saved contractor info
+            const tradeNames = {
+                'plumbing': 'Plumbing', 'electrical': 'Electrical', 'carpentry': 'Carpentry',
+                'hvac': 'HVAC', 'roofing': 'Roofing', 'painting': 'Painting', 'general': 'General Contracting'
+            };
+            document.getElementById('savedContractorInfo').innerHTML = 
+                `<strong>${contractorData.businessName}</strong> (${tradeNames[contractorData.trade] || contractorData.trade})<br>
+                📞 ${contractorData.phone} | ✉️ ${contractorData.email}<br>
+                📍 ${contractorData.address}` + 
+                (contractorData.license ? ` | License: ${contractorData.license}` : '');
+            
+            // Update contract count
+            const count = localStorage.getItem('contractCount') || 0;
+            document.getElementById('contractCount').textContent = count;
+        }
+        
+        // Edit contractor info
+        function editContractorInfo() {
+            if (confirm('Do you want to edit your business details?')) {
+                localStorage.removeItem('hasPaid');
+                location.reload();
+            }
+        }
+        window.editContractorInfo = editContractorInfo;
+        
+        // Validate registration form
+        function validateRegistration() {
+            const requiredFields = ['trade', 'businessName', 'contractorPhone', 'contractorEmail', 'contractorAddress'];
+            return requiredFields.every(field => document.getElementById(field).value.trim());
+        }
+        
+        // Validate contract form
+        function validateContractForm() {
+            const requiredFields = ['clientName', 'clientPhone', 'jobAddress', 'jobDescription', 'startDate', 'completionDate', 'totalAmount', 'paymentTerms'];
+            return requiredFields.every(field => document.getElementById(field).value.trim());
+        }
+        
+        // Pay button click (Registration)
+        document.getElementById('payBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const regError = document.getElementById('regErrorMessage');
+            regError.style.display = 'none';
+            
+            if (!validateRegistration()) {
+                regError.textContent = 'Please fill in all required fields.';
+                regError.style.display = 'block';
+                return;
+            }
+            
+            // Save contractor data
+            const contractorData = {
+                trade: document.getElementById('trade').value,
+                businessName: document.getElementById('businessName').value,
+                license: document.getElementById('license').value || '',
+                phone: document.getElementById('contractorPhone').value,
+                email: document.getElementById('contractorEmail').value,
+                address: document.getElementById('contractorAddress').value
+            };
+            
+            localStorage.setItem('contractorData', JSON.stringify(contractorData));
+            
+            // Show checkout modal (for now just simulate payment)
+            // TODO: Replace with actual PayPal integration
+            if (confirm('Proceed to payment of $19.99?\n\nClick OK to continue to checkout.')) {
+                // Simulate successful payment
+                localStorage.setItem('hasPaid', 'true');
+                localStorage.setItem('contractCount', '0');
+                showGeneratorSection();
+            }
+        });
+        
+        // Create another contract
+        function createAnotherContract() {
+            document.getElementById('thankYouSection').style.display = 'none';
+            document.getElementById('contractForm').reset();
+            window.scrollTo({ top: document.getElementById('form').offsetTop - 100, behavior: 'smooth' });
+        }
+        window.createAnotherContract = createAnotherContract;
+        
+        // Show/hide custom payment field
+        document.getElementById('paymentTerms')?.addEventListener('change', function() {
+            const customGroup = document.getElementById('customPaymentGroup');
+            if (customGroup) {
+                if (this.value === 'custom') {
+                    customGroup.style.display = 'block';
+                } else {
+                    customGroup.style.display = 'none';
+                }
             }
         });
 
-        function validateForm() {
-            const requiredFields = ['trade', 'businessName', 'contractorPhone', 'contractorEmail', 'contractorAddress', 'clientName', 'clientPhone', 'jobAddress', 'jobDescription', 'startDate', 'completionDate', 'totalAmount', 'paymentTerms'];
-            return requiredFields.every(field => document.getElementById(field).value.trim());
-        }
-
         function getPaymentTermsText(value) {
+            const customPayment = document.getElementById('customPayment');
             const terms = {
                 'full_upfront': 'Full Payment Upfront (100% due before work begins)',
                 '50_50': '50% Deposit upon signing, 50% upon completion',
                 '30_70': '30% Deposit upon signing, 70% upon completion',
                 'on_completion': 'Full Payment Upon Completion (100% due when work is finished)',
                 'three_parts': '1/3 upon signing, 1/3 at midway point, 1/3 upon completion',
-                'custom': document.getElementById('customPayment').value || 'Custom payment plan (see notes)'
+                'custom': customPayment ? customPayment.value : 'Custom payment plan (see notes)'
             };
             return terms[value] || value;
         }
 
-        function generatePDF(businessName) {
-            const trade = document.getElementById('trade').value;
-            const license = document.getElementById('license').value || 'N/A';
-            const contractorPhone = document.getElementById('contractorPhone').value;
-            const contractorEmail = document.getElementById('contractorEmail').value;
-            const contractorAddress = document.getElementById('contractorAddress').value;
+        function generatePDF() {
+            // Get saved contractor data
+            const contractorData = JSON.parse(localStorage.getItem('contractorData'));
+            const businessName = contractorData.businessName;
+            const trade = contractorData.trade;
+            const license = contractorData.license || 'N/A';
+            const contractorPhone = contractorData.phone;
+            const contractorEmail = contractorData.email;
+            const contractorAddress = contractorData.address;
             
+            // Get client and job data from form
             const clientName = document.getElementById('clientName').value;
             const clientPhone = document.getElementById('clientPhone').value;
             const clientEmail = document.getElementById('clientEmail').value || 'N/A';
@@ -2769,9 +2935,11 @@
             
             document.body.appendChild(tempDiv);
             
+            const fileName = businessName.replace(/\s+/g, '_') + '_Contract_' + clientName.replace(/\s+/g, '_') + '.pdf';
+            
             const opt = {
                 margin: 10,
-                filename: businessName + '_Contract_' + clientName + '.pdf',
+                filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
@@ -2779,27 +2947,57 @@
 
             html2pdf().set(opt).from(tempDiv.firstChild).save().then(() => {
                 document.body.removeChild(tempDiv);
+                
+                // Increment contract count
+                let count = parseInt(localStorage.getItem('contractCount') || '0');
+                count++;
+                localStorage.setItem('contractCount', count.toString());
+                document.getElementById('contractCount').textContent = count;
+                
+                // Show success message
+                document.getElementById('downloadedFileName').textContent = fileName;
+                document.getElementById('thankYouSection').style.display = 'block';
+                
+                // Scroll to success message
+                document.getElementById('thankYouSection').scrollIntoView({ behavior: 'smooth' });
             });
         }
 
-        // FIXED: Added previewBtn element and event listener
-        previewBtn.addEventListener('click', function(e) {
+        // Generate button click
+        document.getElementById('generateBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            
+            if (!validateContractForm()) {
+                errorMessage.textContent = 'Please fill in all required fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            generatePDF();
+        });
+
+        // Preview button click
+        previewBtn?.addEventListener('click', function(e) {
             e.preventDefault();
             errorMessage.style.display = 'none';
             successMessage.style.display = 'none';
 
-            if (!validateForm()) {
+            if (!validateContractForm()) {
                 errorMessage.textContent = 'Please fill in all required fields.';
                 errorMessage.style.display = 'block';
                 return;
             }
 
-            const trade = document.getElementById('trade').value;
-            const businessName = document.getElementById('businessName').value;
-            const license = document.getElementById('license').value || 'N/A';
-            const contractorPhone = document.getElementById('contractorPhone').value;
-            const contractorEmail = document.getElementById('contractorEmail').value;
-            const contractorAddress = document.getElementById('contractorAddress').value;
+            // Get saved contractor data
+            const contractorData = JSON.parse(localStorage.getItem('contractorData'));
+            const trade = contractorData.trade;
+            const businessName = contractorData.businessName;
+            const license = contractorData.license || 'N/A';
+            const contractorPhone = contractorData.phone;
+            const contractorEmail = contractorData.email;
+            const contractorAddress = contractorData.address;
             
             const clientName = document.getElementById('clientName').value;
             const clientPhone = document.getElementById('clientPhone').value;
@@ -2952,24 +3150,6 @@
             successMessage.style.display = 'block';
         });
 
-        paypalBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            errorMessage.style.display = 'none';
-            successMessage.style.display = 'none';
-
-            if (!validateForm()) {
-                errorMessage.textContent = 'Please fill in all required fields.';
-                errorMessage.style.display = 'block';
-                return;
-            }
-
-            const businessName = document.getElementById('businessName').value;
-            
-            alert('Payment system coming soon! For now, you can preview and download your form.');
-
-            generatePDF(businessName);
-        });
-
         // FIXED: FAQ Toggle - Only ONE instance (removed duplicate)
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
@@ -2979,6 +3159,9 @@
                 this.querySelector('span:last-child').textContent = answer.classList.contains('active') ? '−' : '+';
             });
         });
+        
+        // Check if user has access on page load
+        checkAccess();
 
         // Admin access: Press Ctrl+Shift+A to show admin panel
         document.addEventListener('keydown', function(e) {
