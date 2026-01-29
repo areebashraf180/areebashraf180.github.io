@@ -115,7 +115,7 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" as="script">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     
     <!-- Organization Schema - Enhanced -->
     <script type="application/ld+json">
@@ -2325,26 +2325,6 @@
             <div style="text-align: center; margin-top: 20px;">
                 <button onclick="createAnotherContract()" style="background: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">+ Create Another Contract</button>
             </div>
-        </div>
-    </div>
-            </div>
-        </form>
-
-        <!-- Thank You / Order Confirmation Section -->
-        <div id="thankYouSection" style="display: none; background: #d4edda; border: 2px solid #28a745; padding: 30px; border-radius: 8px; margin-top: 30px;">
-            <h2 style="color: #155724; margin-top: 0;">✓ Thank You! Payment Processed</h2>
-            <p style="color: #155724; font-size: 16px;">Your contract has been downloaded. You will receive it via email within 24 hours.</p>
-            
-            <div style="background: white; padding: 20px; border-radius: 5px; margin-top: 20px;">
-                <h3 style="color: #1e3c72; margin-top: 0;">Your Order Details:</h3>
-                <p><strong>Contractor:</strong> <span id="confirmBusinessName"></span></p>
-                <p><strong>Client:</strong> <span id="confirmClientName"></span></p>
-                <p><strong>Job Site:</strong> <span id="confirmJobAddress"></span></p>
-                <p><strong>Total Amount:</strong> $<span id="confirmTotalAmount"></span></p>
-                <p><strong>Amount Paid:</strong> $19.99</p>
-            </div>
-
-            <button onclick="location.reload()" style="background: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 20px;">Create Another Contract</button>
         </div>
     </div>
 
