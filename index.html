@@ -3030,7 +3030,20 @@
         // Validate contract form
         function validateContractForm() {
             const requiredFields = ['clientName', 'clientPhone', 'jobAddress', 'jobDescription', 'startDate', 'completionDate', 'totalAmount', 'paymentTerms'];
-            return requiredFields.every(field => document.getElementById(field).value.trim());
+            let allValid = true;
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element) {
+                    console.error('Field not found:', field);
+                    allValid = false;
+                } else if (!element.value.trim()) {
+                    console.log('Empty field:', field);
+                    allValid = false;
+                }
+            });
+            
+            return allValid;
         }
         
         // Pay button click (Registration)
@@ -3101,8 +3114,18 @@
         }
 
         function generatePDF() {
+            console.log('generatePDF called');
+            
             // Get saved contractor data
-            const contractorData = JSON.parse(localStorage.getItem('contractorData'));
+            const contractorDataStr = localStorage.getItem('contractorData');
+            if (!contractorDataStr) {
+                alert('Error: No contractor data found. Please register first.');
+                return;
+            }
+            
+            const contractorData = JSON.parse(contractorDataStr);
+            console.log('Contractor data:', contractorData);
+            
             const businessName = contractorData.businessName;
             const trade = contractorData.trade;
             const license = contractorData.license || 'N/A';
@@ -3261,7 +3284,10 @@
                 jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
             };
 
+            console.log('Starting PDF generation with filename:', fileName);
+            
             html2pdf().set(opt).from(tempDiv.firstChild).save().then(() => {
+                console.log('PDF saved successfully');
                 document.body.removeChild(tempDiv);
                 
                 // Increment contract count
@@ -3276,22 +3302,51 @@
                 
                 // Scroll to success message
                 document.getElementById('thankYouSection').scrollIntoView({ behavior: 'smooth' });
+            }).catch(function(error) {
+                console.error('PDF generation error:', error);
+                alert('Error generating PDF: ' + error.message);
+                document.body.removeChild(tempDiv);
             });
         }
 
         // Generate button click
         document.getElementById('generateBtn')?.addEventListener('click', function(e) {
             e.preventDefault();
-            errorMessage.style.display = 'none';
-            successMessage.style.display = 'none';
+            console.log('Generate button clicked');
             
+            // Check if elements exist
+            if (!errorMessage) {
+                console.error('errorMessage element not found');
+                alert('Error: Page not loaded correctly. Please refresh.');
+                return;
+            }
+            
+            errorMessage.style.display = 'none';
+            if (successMessage) successMessage.style.display = 'none';
+            
+            console.log('Validating form...');
             if (!validateContractForm()) {
+                console.log('Validation failed');
                 errorMessage.textContent = 'Please fill in all required fields.';
                 errorMessage.style.display = 'block';
                 return;
             }
             
-            generatePDF();
+            console.log('Validation passed, generating PDF...');
+            
+            // Check if html2pdf is loaded
+            if (typeof html2pdf === 'undefined') {
+                console.error('html2pdf not loaded');
+                alert('Error: PDF library not loaded. Please refresh the page.');
+                return;
+            }
+            
+            try {
+                generatePDF();
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('Error generating PDF: ' + error.message);
+            }
         });
 
         // Preview button click
