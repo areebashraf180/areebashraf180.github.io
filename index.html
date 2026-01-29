@@ -3162,14 +3162,27 @@
             const formattedCompletionDate = new Date(completionDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
             // Create a temporary div with the content
+            // Create a container for PDF content
             const tempDiv = document.createElement('div');
-            tempDiv.style.position = 'absolute';
-            tempDiv.style.left = '-9999px';
+            tempDiv.id = 'pdfContent';
+            tempDiv.style.position = 'fixed';
+            tempDiv.style.left = '0';
             tempDiv.style.top = '0';
             tempDiv.style.width = '210mm';
             tempDiv.style.background = 'white';
-            tempDiv.innerHTML = `
-                <div style="font-family: Arial, sans-serif; padding: 30px; line-height: 1.5; font-size: 12px; background: white;">
+            tempDiv.style.zIndex = '-1';
+            tempDiv.style.opacity = '0';
+            tempDiv.style.pointerEvents = 'none';
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.style.fontFamily = 'Arial, sans-serif';
+            contentDiv.style.padding = '30px';
+            contentDiv.style.lineHeight = '1.5';
+            contentDiv.style.fontSize = '12px';
+            contentDiv.style.background = 'white';
+            contentDiv.style.color = '#333';
+            
+            contentDiv.innerHTML = `
                     <!-- Header -->
                     <div style="text-align: center; margin-bottom: 20px; border-bottom: 3px solid #1e3c72; padding-bottom: 15px;">
                         <h1 style="margin: 0; color: #1e3c72; font-size: 24px;">SERVICE CONTRACT</h1>
@@ -3178,45 +3191,45 @@
                     </div>
 
                     <!-- Two Column: Service Provider & Client -->
-                    <div style="display: flex; gap: 30px; margin-bottom: 20px;">
-                        <div style="flex: 1; padding: 15px; background: #f0f4f8; border-radius: 5px; border-left: 4px solid #1e3c72;">
-                            <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 5px; margin-top: 0; font-size: 14px;">CONTRACTOR</h3>
-                            <p style="margin: 5px 0;"><strong>Business Name:</strong> ${businessName}</p>
-                            <p style="margin: 5px 0;"><strong>Phone:</strong> ${contractorPhone}</p>
-                            <p style="margin: 5px 0;"><strong>Email:</strong> ${contractorEmail}</p>
-                            <p style="margin: 5px 0;"><strong>Address:</strong> ${contractorAddress}</p>
-                            <p style="margin: 5px 0;"><strong>License #:</strong> ${license}</p>
-                        </div>
-                        <div style="flex: 1; padding: 15px; background: #fff8f0; border-radius: 5px; border-left: 4px solid #ff6b35;">
-                            <h3 style="color: #ff6b35; border-bottom: 2px solid #1e3c72; padding-bottom: 5px; margin-top: 0; font-size: 14px;">CLIENT</h3>
-                            <p style="margin: 5px 0;"><strong>Name:</strong> ${clientName}</p>
-                            <p style="margin: 5px 0;"><strong>Phone:</strong> ${clientPhone}</p>
-                            <p style="margin: 5px 0;"><strong>Email:</strong> ${clientEmail}</p>
-                            <p style="margin: 5px 0;"><strong>Job Site:</strong> ${jobAddress}</p>
-                        </div>
-                    </div>
+                    <table style="width: 100%; margin-bottom: 20px; border-collapse: separate; border-spacing: 15px 0;">
+                        <tr>
+                            <td style="width: 50%; padding: 15px; background: #f0f4f8; border-radius: 5px; border-left: 4px solid #1e3c72; vertical-align: top;">
+                                <h3 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 5px; margin-top: 0; font-size: 14px;">CONTRACTOR</h3>
+                                <p style="margin: 5px 0;"><strong>Business Name:</strong> ${businessName}</p>
+                                <p style="margin: 5px 0;"><strong>Phone:</strong> ${contractorPhone}</p>
+                                <p style="margin: 5px 0;"><strong>Email:</strong> ${contractorEmail}</p>
+                                <p style="margin: 5px 0;"><strong>Address:</strong> ${contractorAddress}</p>
+                                <p style="margin: 5px 0;"><strong>License #:</strong> ${license}</p>
+                            </td>
+                            <td style="width: 50%; padding: 15px; background: #fff8f0; border-radius: 5px; border-left: 4px solid #ff6b35; vertical-align: top;">
+                                <h3 style="color: #ff6b35; border-bottom: 2px solid #1e3c72; padding-bottom: 5px; margin-top: 0; font-size: 14px;">CLIENT</h3>
+                                <p style="margin: 5px 0;"><strong>Name:</strong> ${clientName}</p>
+                                <p style="margin: 5px 0;"><strong>Phone:</strong> ${clientPhone}</p>
+                                <p style="margin: 5px 0;"><strong>Email:</strong> ${clientEmail}</p>
+                                <p style="margin: 5px 0;"><strong>Job Site:</strong> ${jobAddress}</p>
+                            </td>
+                        </tr>
+                    </table>
 
                     <!-- Job Details -->
                     <div style="margin-bottom: 20px; padding: 15px; background: #f0fff4; border-radius: 5px; border-left: 4px solid #28a745;">
                         <h3 style="color: #28a745; margin-top: 0; font-size: 14px;">JOB DETAILS</h3>
                         <p style="margin: 5px 0;"><strong>Description of Work:</strong></p>
                         <p style="margin: 5px 0; padding: 10px; background: white; border-radius: 3px;">${jobDescription}</p>
-                        <div style="display: flex; gap: 30px; margin-top: 10px;">
-                            <p style="margin: 5px 0;"><strong>Start Date:</strong> ${formattedStartDate}</p>
-                            <p style="margin: 5px 0;"><strong>Est. Completion:</strong> ${formattedCompletionDate}</p>
-                        </div>
+                        <table style="width: 100%; margin-top: 10px;">
+                            <tr>
+                                <td style="width: 50%;"><p style="margin: 5px 0;"><strong>Start Date:</strong> ${formattedStartDate}</p></td>
+                                <td style="width: 50%;"><p style="margin: 5px 0;"><strong>Est. Completion:</strong> ${formattedCompletionDate}</p></td>
+                            </tr>
+                        </table>
                     </div>
 
                     <!-- Payment Terms -->
                     <div style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-radius: 5px; border: 2px solid #1e3c72;">
                         <h3 style="color: #1e3c72; margin-top: 0; font-size: 14px;">PAYMENT TERMS</h3>
-                        <div style="display: flex; gap: 30px;">
-                            <div>
-                                <p style="margin: 5px 0; font-size: 20px;"><strong>Total Amount: $${parseFloat(totalAmount).toFixed(2)}</strong></p>
-                            </div>
-                        </div>
+                        <p style="margin: 5px 0; font-size: 20px;"><strong>Total Amount: $${parseFloat(totalAmount).toFixed(2)}</strong></p>
                         <p style="margin: 10px 0;"><strong>Payment Schedule:</strong> ${paymentTermsText}</p>
-                        <p style="margin: 10px 0;"><strong>Accepted Payment Methods:</strong> ☐ Cash &nbsp; ☐ Check &nbsp; ☐ Credit Card &nbsp; ☐ Bank Transfer</p>
+                        <p style="margin: 10px 0;"><strong>Accepted Payment Methods:</strong> Cash / Check / Credit Card / Bank Transfer</p>
                     </div>
 
                     <!-- Materials Section -->
@@ -3252,20 +3265,22 @@
                     <div style="margin-top: 30px; padding: 20px; border: 2px solid #1e3c72; border-radius: 5px;">
                         <h3 style="color: #1e3c72; margin-top: 0; text-align: center;">SIGNATURES</h3>
                         <p style="text-align: center; font-size: 11px; color: #666;">By signing below, both parties agree to the terms and conditions of this contract.</p>
-                        <div style="display: flex; gap: 40px; margin-top: 20px;">
-                            <div style="flex: 1;">
-                                <p style="margin: 5px 0;"><strong>CONTRACTOR</strong></p>
-                                <p style="border-top: 1px solid #000; margin-top: 40px; padding-top: 5px;">Signature</p>
-                                <p style="margin: 5px 0;"><strong>${businessName}</strong></p>
-                                <p style="margin: 5px 0;">Date: _____________________</p>
-                            </div>
-                            <div style="flex: 1;">
-                                <p style="margin: 5px 0;"><strong>CLIENT</strong></p>
-                                <p style="border-top: 1px solid #000; margin-top: 40px; padding-top: 5px;">Signature</p>
-                                <p style="margin: 5px 0;"><strong>${clientName}</strong></p>
-                                <p style="margin: 5px 0;">Date: _____________________</p>
-                            </div>
-                        </div>
+                        <table style="width: 100%; margin-top: 20px;">
+                            <tr>
+                                <td style="width: 50%; padding-right: 20px; vertical-align: top;">
+                                    <p style="margin: 5px 0;"><strong>CONTRACTOR</strong></p>
+                                    <p style="border-top: 1px solid #000; margin-top: 40px; padding-top: 5px;">Signature</p>
+                                    <p style="margin: 5px 0;"><strong>${businessName}</strong></p>
+                                    <p style="margin: 5px 0;">Date: _____________________</p>
+                                </td>
+                                <td style="width: 50%; padding-left: 20px; vertical-align: top;">
+                                    <p style="margin: 5px 0;"><strong>CLIENT</strong></p>
+                                    <p style="border-top: 1px solid #000; margin-top: 40px; padding-top: 5px;">Signature</p>
+                                    <p style="margin: 5px 0;"><strong>${clientName}</strong></p>
+                                    <p style="margin: 5px 0;">Date: _____________________</p>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
                     <!-- Footer -->
@@ -3273,9 +3288,9 @@
                         <p style="margin: 3px 0;">This contract is valid when signed by both parties. Each party should retain a copy for their records.</p>
                         <p style="margin: 3px 0;">Generated by Get Contractor Forms | www.getcontractorforms.com</p>
                     </div>
-                </div>
             `;
             
+            tempDiv.appendChild(contentDiv);
             document.body.appendChild(tempDiv);
             
             const fileName = businessName.replace(/\s+/g, '_') + '_Contract_' + clientName.replace(/\s+/g, '_') + '.pdf';
@@ -3284,25 +3299,30 @@
                 margin: 10,
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: true,
+                    backgroundColor: '#ffffff'
+                },
                 jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
             };
 
             console.log('Starting PDF generation with filename:', fileName);
             
-            // Get the content element
-            const contentElement = tempDiv.querySelector('div');
+            // Make visible for rendering
+            tempDiv.style.opacity = '1';
+            tempDiv.style.zIndex = '9999';
+            tempDiv.style.visibility = 'visible';
+            contentDiv.style.minHeight = '100px';
+            contentDiv.style.minWidth = '100px';
             
-            if (!contentElement) {
-                console.error('Content element not found');
-                alert('Error: Could not create PDF content');
-                document.body.removeChild(tempDiv);
-                return;
-            }
+            console.log('Content div innerHTML length:', contentDiv.innerHTML.length);
             
-            // Small delay to ensure DOM is ready
+            // Longer delay to ensure DOM is fully ready
             setTimeout(() => {
-                html2pdf().set(opt).from(contentElement).save().then(() => {
+                console.log('Starting html2pdf conversion...');
+                html2pdf().set(opt).from(contentDiv).save().then(() => {
                     console.log('PDF saved successfully');
                     document.body.removeChild(tempDiv);
                     
@@ -3323,7 +3343,7 @@
                     alert('Error generating PDF: ' + error.message);
                     document.body.removeChild(tempDiv);
                 });
-            }, 100);
+            }, 500);
         }
 
         // Generate button click
