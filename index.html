@@ -3163,9 +3163,13 @@
 
             // Create a temporary div with the content
             const tempDiv = document.createElement('div');
-            tempDiv.style.display = 'none';
+            tempDiv.style.position = 'absolute';
+            tempDiv.style.left = '-9999px';
+            tempDiv.style.top = '0';
+            tempDiv.style.width = '210mm';
+            tempDiv.style.background = 'white';
             tempDiv.innerHTML = `
-                <div style="font-family: Arial, sans-serif; padding: 30px; line-height: 1.5; font-size: 12px;">
+                <div style="font-family: Arial, sans-serif; padding: 30px; line-height: 1.5; font-size: 12px; background: white;">
                     <!-- Header -->
                     <div style="text-align: center; margin-bottom: 20px; border-bottom: 3px solid #1e3c72; padding-bottom: 15px;">
                         <h1 style="margin: 0; color: #1e3c72; font-size: 24px;">SERVICE CONTRACT</h1>
@@ -3286,27 +3290,40 @@
 
             console.log('Starting PDF generation with filename:', fileName);
             
-            html2pdf().set(opt).from(tempDiv.firstChild).save().then(() => {
-                console.log('PDF saved successfully');
+            // Get the content element
+            const contentElement = tempDiv.querySelector('div');
+            
+            if (!contentElement) {
+                console.error('Content element not found');
+                alert('Error: Could not create PDF content');
                 document.body.removeChild(tempDiv);
-                
-                // Increment contract count
-                let count = parseInt(localStorage.getItem('contractCount') || '0');
-                count++;
-                localStorage.setItem('contractCount', count.toString());
-                document.getElementById('contractCount').textContent = count;
-                
-                // Show success message
-                document.getElementById('downloadedFileName').textContent = fileName;
-                document.getElementById('thankYouSection').style.display = 'block';
-                
-                // Scroll to success message
-                document.getElementById('thankYouSection').scrollIntoView({ behavior: 'smooth' });
-            }).catch(function(error) {
-                console.error('PDF generation error:', error);
-                alert('Error generating PDF: ' + error.message);
-                document.body.removeChild(tempDiv);
-            });
+                return;
+            }
+            
+            // Small delay to ensure DOM is ready
+            setTimeout(() => {
+                html2pdf().set(opt).from(contentElement).save().then(() => {
+                    console.log('PDF saved successfully');
+                    document.body.removeChild(tempDiv);
+                    
+                    // Increment contract count
+                    let count = parseInt(localStorage.getItem('contractCount') || '0');
+                    count++;
+                    localStorage.setItem('contractCount', count.toString());
+                    document.getElementById('contractCount').textContent = count;
+                    
+                    // Show success message
+                    document.getElementById('downloadedFileName').textContent = fileName;
+                    document.getElementById('thankYouSection').style.display = 'block';
+                    
+                    // Scroll to success message
+                    document.getElementById('thankYouSection').scrollIntoView({ behavior: 'smooth' });
+                }).catch(function(error) {
+                    console.error('PDF generation error:', error);
+                    alert('Error generating PDF: ' + error.message);
+                    document.body.removeChild(tempDiv);
+                });
+            }, 100);
         }
 
         // Generate button click
