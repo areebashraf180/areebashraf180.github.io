@@ -219,8 +219,41 @@
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "2500"
-        }
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "2500",
+            "reviewCount": "4"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Mike Johnson"},
+                "reviewBody": "Been plumbing for 15 years and wish I had this from day one. Saved my bacon last month when a customer tried to dispute our agreed price.",
+                "datePublished": "2024-06-22"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Sarah Chen"},
+                "reviewBody": "As a woman in electrical contracting, I need everything to look professional. Clients take me more seriously now when I show up with a proper contract.",
+                "datePublished": "2024-01-08"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Tony Martinez"},
+                "reviewBody": "$19.99 for unlimited use? First AC installation job I used it on was $8,500. Customer paid deposit same day after signing.",
+                "datePublished": "2024-08-03"
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "James Rodriguez"},
+                "reviewBody": "After Hurricane Ian, we had 200+ roof repair jobs lined up. Made $340K that season with zero payment disputes.",
+                "datePublished": "2024-11-02"
+            }
+        ]
     }
     </script>
     
@@ -662,58 +695,6 @@
     }
     </script>
     
-    <!-- Review Schema - Individual Reviews for Rich Snippets -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Contractor Service Contract Form",
-        "description": "Professional contractor service contract forms for plumbers, electricians, HVAC technicians, roofers, painters, and carpenters.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Get Contractor Forms"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": "2500",
-            "reviewCount": "2500"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "author": {"@type": "Person", "name": "Mike Johnson"},
-                "reviewBody": "Been plumbing for 15 years and wish I had this from day one. Saved my bacon last month when a customer tried to dispute our agreed price.",
-                "datePublished": "2024-06-22"
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "author": {"@type": "Person", "name": "Sarah Chen"},
-                "reviewBody": "As a woman in electrical contracting, I need everything to look professional. Clients take me more seriously now when I show up with a proper contract.",
-                "datePublished": "2024-01-08"
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "author": {"@type": "Person", "name": "Tony Martinez"},
-                "reviewBody": "$19.99 for unlimited use? First AC installation job I used it on was $8,500. Customer paid deposit same day after signing.",
-                "datePublished": "2024-08-03"
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "author": {"@type": "Person", "name": "James Rodriguez"},
-                "reviewBody": "After Hurricane Ian, we had 200+ roof repair jobs lined up. Made $340K that season with zero payment disputes.",
-                "datePublished": "2024-11-02"
-            }
-        ]
-    }
-    </script>
-    
     <!-- Speakable Schema for Voice Search (Google Assistant, Alexa) -->
     <script type="application/ld+json">
     {
@@ -832,11 +813,25 @@
             "@type": "Question",
             "name": "What is the best contractor form for plumbers, electricians, and HVAC technicians in USA?",
             "text": "What is the best contractor form for plumbers, electricians, and HVAC technicians in USA?",
+            "dateCreated": "2024-01-01",
+            "datePublished": "2024-01-01",
+            "author": {
+                "@type": "Organization",
+                "name": "Get Contractor Forms"
+            },
             "answerCount": 1,
+            "upvoteCount": 2500,
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Get Contractor Forms offers the best professional service contract templates for plumbers, electricians, HVAC technicians, roofers, painters, and carpenters in the USA. For just $19.99 one-time purchase, contractors get unlimited use of customizable PDF contracts that include scope of work, payment terms, warranties, and signature areas. Trusted by 2,500+ contractors across all 50 states with a 4.9/5 star rating and 30-day money-back guarantee.",
-                "url": "https://www.getcontractorforms.com"
+                "url": "https://www.getcontractorforms.com",
+                "dateCreated": "2024-01-01",
+                "datePublished": "2024-01-01",
+                "upvoteCount": 2500,
+                "author": {
+                    "@type": "Organization",
+                    "name": "Get Contractor Forms"
+                }
             }
         }
     }
@@ -2010,19 +2005,19 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; text-align: center;">
                 
                 <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">1️⃣</div>
+                    <div style="font-size: 48px; margin-bottom: 15px; font-weight: bold; color: #ff6b35;">1</div>
                     <h3 style="color: #ff6b35; margin-bottom: 10px;">Enter Your Business Details</h3>
                     <p style="opacity: 0.9;">Fill in your trade, business name, phone, email, address, and license number once. Your info is saved for all future contracts.</p>
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">2️⃣</div>
+                    <div style="font-size: 48px; margin-bottom: 15px; font-weight: bold; color: #ff6b35;">2</div>
                     <h3 style="color: #ff6b35; margin-bottom: 10px;">Pay $19.99 One-Time</h3>
                     <p style="opacity: 0.9;">Complete secure payment via credit/debit card. This is a one-time purchase - no subscriptions, no recurring fees ever.</p>
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 8px;">
-                    <div style="font-size: 48px; margin-bottom: 15px;">3️⃣</div>
+                    <div style="font-size: 48px; margin-bottom: 15px; font-weight: bold; color: #ff6b35;">3</div>
                     <h3 style="color: #ff6b35; margin-bottom: 10px;">Generate Unlimited Contracts</h3>
                     <p style="opacity: 0.9;">Add client details and job info for each project. Download professional PDF contracts for different clients - unlimited forever!</p>
                 </div>
@@ -2030,7 +2025,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
-                <p style="font-size: 18px; opacity: 0.9;">💡 <strong>Key Benefit:</strong> Enter your business info ONCE, create contracts for UNLIMITED clients!</p>
+                <p style="font-size: 18px; opacity: 0.9;"><strong>Key Benefit:</strong> Enter your business info ONCE, create contracts for UNLIMITED clients!</p>
                 <a href="#form" style="display: inline-block; margin-top: 20px; background: #ff6b35; color: white; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 18px;">Get Started Now →</a>
             </div>
         </div>
@@ -2041,27 +2036,27 @@
             <h2>Contractor Forms Available For:</h2>
             <div class="trades-grid">
                 <div class="trade-card">
-                    <h3>🔧 Plumbing</h3>
+                    <h3>Plumbing</h3>
                     <p>Professional plumbing service contracts and agreements.</p>
                 </div>
                 <div class="trade-card">
-                    <h3>⚡ Electrical</h3>
+                    <h3>Electrical</h3>
                     <p>Electrical work contracts with safety and compliance terms.</p>
                 </div>
                 <div class="trade-card">
-                    <h3>🪚 Carpentry</h3>
+                    <h3>Carpentry</h3>
                     <p>Custom carpentry and woodwork service agreements.</p>
                 </div>
                 <div class="trade-card">
-                    <h3>❄️ HVAC</h3>
+                    <h3>HVAC</h3>
                     <p>HVAC installation and maintenance service contracts.</p>
                 </div>
                 <div class="trade-card">
-                    <h3>🏠 Roofing</h3>
+                    <h3>Roofing</h3>
                     <p>Professional roofing service and warranty agreements.</p>
                 </div>
                 <div class="trade-card">
-                    <h3>🎨 Painting</h3>
+                    <h3>Painting</h3>
                     <p>Painting service contracts with detailed scope of work.</p>
                 </div>
             </div>
@@ -2133,15 +2128,15 @@
         <div id="registrationSection">
             <form id="registrationForm">
                 <div class="form-section">
-                    <h2>🚀 Get Lifetime Access to Contract Generator</h2>
+                    <h2>Get Lifetime Access to Contract Generator</h2>
                     <p style="text-align: center; color: #666; margin-bottom: 10px;">One-time payment • Unlimited contracts forever</p>
                     <div style="text-align: center; background: #d4edda; padding: 15px; border-radius: 8px; margin-bottom: 25px;">
-                        <p style="color: #155724; margin: 0; font-size: 16px;">✅ Pay once ($19.99) → Generate <strong>UNLIMITED</strong> contracts with different clients!</p>
+                        <p style="color: #155724; margin: 0; font-size: 16px;">Pay once ($19.99) → Generate <strong>UNLIMITED</strong> contracts with different clients!</p>
                     </div>
 
                     <!-- Contractor Details -->
                     <div style="background: #f0f4f8; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #1e3c72;">
-                        <h3 style="color: #1e3c72; margin-top: 0; margin-bottom: 20px;">📋 Your Business Details</h3>
+                        <h3 style="color: #1e3c72; margin-top: 0; margin-bottom: 20px;">Your Business Details</h3>
                         <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Enter your details once. They'll be saved for all future contracts.</p>
                         
                         <div class="form-group">
@@ -2195,7 +2190,7 @@
                 </div>
 
                 <div class="button-group">
-                    <button type="button" class="btn btn-paypal" id="payBtn">💳 Pay $19.99 & Get Access</button>
+                    <button type="button" class="btn btn-paypal" id="payBtn">Pay $19.99 & Get Access</button>
                 </div>
 
                 <div class="error-message" id="regErrorMessage">
@@ -2207,7 +2202,7 @@
         <!-- STEP 2: Contract Generator (After payment - unlimited use) -->
         <div id="generatorSection" style="display: none;">
             <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; text-align: center;">
-                <h2 style="margin: 0 0 10px 0;">✅ Welcome, <span id="welcomeBusinessName">Contractor</span>!</h2>
+                <h2 style="margin: 0 0 10px 0;">Welcome, <span id="welcomeBusinessName">Contractor</span>!</h2>
                 <p style="margin: 0; opacity: 0.9;">Your account is active. Generate unlimited contracts below.</p>
             </div>
 
@@ -2221,7 +2216,7 @@
                     <!-- Saved Contractor Info (Read-only display) -->
                     <div style="background: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #1e3c72;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <h4 style="color: #1e3c72; margin: 0;">📋 Your Business Info</h4>
+                            <h4 style="color: #1e3c72; margin: 0;">Your Business Info</h4>
                             <button type="button" onclick="editContractorInfo()" style="background: none; border: 1px solid #1e3c72; color: #1e3c72; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px;">✏️ Edit</button>
                         </div>
                         <p style="margin: 10px 0 0 0; color: #555;" id="savedContractorInfo">Loading...</p>
@@ -2229,7 +2224,7 @@
 
                     <!-- Client Details -->
                     <div style="background: #fff8f0; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #ff6b35;">
-                        <h3 style="color: #ff6b35; margin-top: 0; margin-bottom: 20px;">👤 Client Details</h3>
+                        <h3 style="color: #ff6b35; margin-top: 0; margin-bottom: 20px;">Client Details</h3>
                         
                         <div class="form-row">
                             <div class="form-group">
@@ -2255,7 +2250,7 @@
 
                     <!-- Job Details -->
                     <div style="background: #f0fff4; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #28a745;">
-                        <h3 style="color: #28a745; margin-top: 0; margin-bottom: 20px;">🔧 Job Details</h3>
+                        <h3 style="color: #28a745; margin-top: 0; margin-bottom: 20px;">Job Details</h3>
                         
                         <div class="form-group">
                             <label for="jobDescription">Job Description <span class="required">*</span></label>
@@ -2300,8 +2295,8 @@
                 </div>
 
                 <div class="button-group">
-                    <button type="button" class="btn btn-preview" id="previewBtn">👁️ Preview Contract</button>
-                    <button type="button" class="btn btn-paypal" id="generateBtn" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">📄 Generate & Download Contract</button>
+                    <button type="button" class="btn btn-preview" id="previewBtn">Preview Contract</button>
+                    <button type="button" class="btn btn-paypal" id="generateBtn" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">Generate & Download Contract</button>
                 </div>
 
                 <div class="success-message" id="successMessage">
@@ -2315,20 +2310,20 @@
 
             <!-- Contract Counter -->
             <div style="text-align: center; margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
-                <p style="margin: 0; color: #666;">📊 Contracts Generated: <strong id="contractCount">0</strong></p>
+                <p style="margin: 0; color: #666;">Contracts Generated: <strong id="contractCount">0</strong></p>
             </div>
         </div>
 
         <!-- Thank You / Success Section -->
         <div id="thankYouSection" style="display: none; background: #d4edda; border: 2px solid #28a745; padding: 30px; border-radius: 8px; margin-top: 30px;">
-            <h2 style="color: #155724; margin-top: 0; text-align: center;">✅ Contract Downloaded Successfully!</h2>
+            <h2 style="color: #155724; margin-top: 0; text-align: center;">Contract Downloaded Successfully!</h2>
             <div style="background: white; padding: 20px; border-radius: 5px; margin-top: 20px; text-align: center;">
-                <p style="font-size: 18px; color: #155724;">📥 <strong>Check your Downloads folder</strong></p>
+                <p style="font-size: 18px; color: #155724;"><strong>Check your Downloads folder</strong></p>
                 <p style="color: #666; margin: 10px 0;">Your contract has been saved as:</p>
                 <p style="background: #f0f0f0; padding: 10px; border-radius: 4px; font-family: monospace;" id="downloadedFileName">Contract.pdf</p>
             </div>
             <div style="text-align: center; margin-top: 20px;">
-                <button onclick="createAnotherContract()" style="background: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">➕ Create Another Contract</button>
+                <button onclick="createAnotherContract()" style="background: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">+ Create Another Contract</button>
             </div>
         </div>
     </div>
@@ -2355,7 +2350,7 @@
 
     <!-- Hidden Admin: View Orders Section (only visible to admin) -->
     <div id="adminPanel" style="display: none; max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <h2 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 10px;">📋 Recent Orders (Manual Email Required)</h2>
+        <h2 style="color: #1e3c72; border-bottom: 2px solid #ff6b35; padding-bottom: 10px;">Recent Orders (Manual Email Required)</h2>
         <p style="color: #666;">These customers have paid and are waiting for their forms. Send them the contract PDF via email.</p>
         
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
@@ -2410,32 +2405,32 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px;">
                 
                 <article style="background: #f9f9f9; padding: 25px; border-radius: 8px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #1e3c72; margin-bottom: 10px;">🔧 Plumbing Service Contracts</h3>
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">Plumbing Service Contracts</h3>
                     <p style="color: #555; line-height: 1.7;">Perfect for <strong>licensed plumbers</strong> handling pipe repair, water heater installation, drain cleaning, bathroom remodels, and emergency plumbing services. Includes sections for materials, labor warranties, and permits.</p>
                 </article>
                 
                 <article style="background: #f9f9f9; padding: 25px; border-radius: 8px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #1e3c72; margin-bottom: 10px;">⚡ Electrical Service Contracts</h3>
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">Electrical Service Contracts</h3>
                     <p style="color: #555; line-height: 1.7;">Designed for <strong>certified electricians</strong> doing panel upgrades, wiring installation, outlet repairs, lighting installation, and electrical inspections. Covers permit requirements and code compliance.</p>
                 </article>
                 
                 <article style="background: #f9f9f9; padding: 25px; border-radius: 8px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #1e3c72; margin-bottom: 10px;">❄️ HVAC Service Contracts</h3>
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">HVAC Service Contracts</h3>
                     <p style="color: #555; line-height: 1.7;">Built for <strong>HVAC technicians</strong> providing AC repair, furnace installation, duct cleaning, thermostat replacement, and seasonal maintenance agreements. Includes warranty and service plan options.</p>
                 </article>
                 
                 <article style="background: #f9f9f9; padding: 25px; border-radius: 8px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #1e3c72; margin-bottom: 10px;">🏠 Roofing Service Contracts</h3>
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">Roofing Service Contracts</h3>
                     <p style="color: #555; line-height: 1.7;">Ideal for <strong>roofing contractors</strong> doing roof replacement, shingle repair, leak repair, gutter installation, and storm damage restoration. Covers materials, labor warranties, and insurance requirements.</p>
                 </article>
                 
                 <article style="background: #f9f9f9; padding: 25px; border-radius: 8px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #1e3c72; margin-bottom: 10px;">🎨 Painting Service Contracts</h3>
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">Painting Service Contracts</h3>
                     <p style="color: #555; line-height: 1.7;">Created for <strong>professional painters</strong> handling interior painting, exterior painting, commercial projects, and residential jobs. Includes paint specifications, prep work, and number of coats.</p>
                 </article>
                 
                 <article style="background: #f9f9f9; padding: 25px; border-radius: 8px; border-left: 4px solid #ff6b35;">
-                    <h3 style="color: #1e3c72; margin-bottom: 10px;">🪚 Carpentry Service Contracts</h3>
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">Carpentry Service Contracts</h3>
                     <p style="color: #555; line-height: 1.7;">Made for <strong>skilled carpenters</strong> doing deck building, cabinet installation, trim work, framing, door installation, and custom woodworking. Covers materials, specifications, and craftsmanship warranties.</p>
                 </article>
                 
@@ -2583,7 +2578,7 @@
     <!-- SEO Section: Serving All 50 US States -->
     <section class="section" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white;" id="states">
         <div class="container">
-            <h2 style="color: white; text-align: center;">🇺🇸 Serving Contractors in All 50 US States</h2>
+            <h2 style="color: white; text-align: center;">Serving Contractors in All 50 US States</h2>
             <p style="text-align: center; opacity: 0.9; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Our professional contractor forms are designed to work across the United States. Whether you're a plumber in California, an electrician in Texas, or an HVAC technician in Florida, our service contracts have you covered.</p>
             
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1000px; margin: 0 auto;">
@@ -2591,11 +2586,11 @@
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Alaska</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Arizona</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Arkansas</span>
-                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">California ⭐</span>
+                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">California (Top)</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Colorado</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Connecticut</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Delaware</span>
-                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">Florida ⭐</span>
+                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">Florida (Top)</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Georgia</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Hawaii</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Idaho</span>
@@ -2618,7 +2613,7 @@
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">New Hampshire</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">New Jersey</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">New Mexico</span>
-                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">New York ⭐</span>
+                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">New York (Top)</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">North Carolina</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">North Dakota</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Ohio</span>
@@ -2629,7 +2624,7 @@
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">South Carolina</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">South Dakota</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Tennessee</span>
-                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">Texas ⭐</span>
+                <span style="background: rgba(255,255,255,0.25); padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold;">Texas (Top)</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Utah</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Vermont</span>
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Virginia</span>
@@ -2639,7 +2634,7 @@
                 <span style="background: rgba(255,255,255,0.15); padding: 8px 15px; border-radius: 20px; font-size: 13px;">Wyoming</span>
             </div>
             
-            <p style="text-align: center; margin-top: 30px; opacity: 0.8; font-size: 14px;">⭐ = Top states by contractor usage</p>
+            <p style="text-align: center; margin-top: 30px; opacity: 0.8; font-size: 14px;">(Top) = Most popular states by contractor usage</p>
         </div>
     </section>
 
@@ -2719,7 +2714,7 @@
                     <input type="hidden" name="_subject" value="New Contact Form Submission - Get Contractor Forms">
                     
                     <button type="submit" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-                        📧 Send Message
+                        Send Message
                     </button>
                 </form>
                 
@@ -2770,18 +2765,18 @@
                 
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 14px;">📧 areebashrafahangermaa_cse18@its.edu.in</p>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Email: areebashrafahangermaa_cse18@its.edu.in</p>
                     <div style="margin-top: 15px;">
                         <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 10px;">Follow Us:</p>
-                        <a href="https://www.pinterest.com/getcontractorforms/" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; margin-right: 15px; font-size: 14px;">📌 Pinterest</a>
-                        <a href="https://twitter.com/getcontractorforms" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; margin-right: 15px; font-size: 14px;">🐦 Twitter</a>
-                        <a href="https://www.facebook.com/getcontractorforms" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; font-size: 14px;">📘 Facebook</a>
+                        <a href="https://www.pinterest.com/getcontractorforms/" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; margin-right: 15px; font-size: 14px;">Pinterest</a>
+                        <a href="https://twitter.com/getcontractorforms" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; margin-right: 15px; font-size: 14px;">Twitter</a>
+                        <a href="https://www.facebook.com/getcontractorforms" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; font-size: 14px;">Facebook</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-cta">
-                <p style="font-size: 18px; margin-bottom: 10px;">🚀 Ready to look more professional and protect your business?</p>
+                <p style="font-size: 18px; margin-bottom: 10px;">Ready to look more professional and protect your business?</p>
                 <a href="#form" class="footer-cta-btn">Get Your Contract Form - $19.99</a>
             </div>
             
