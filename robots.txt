@@ -1,0 +1,30 @@
+# robots.txt for GetContractorForms.com
+# Professional Contractor Service Contracts & Forms
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.getcontractorforms.com/sitemap.xml
+
+# Welcome all search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
