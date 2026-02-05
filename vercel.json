@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "getcontractorforms.com"
+        }
+      ],
+      "destination": "https://www.getcontractorforms.com/$1",
+      "permanent": true
+    }
+  ]
+}
